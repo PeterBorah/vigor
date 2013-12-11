@@ -12,7 +12,7 @@ module Vigor
 
     def summoner(lookup_value)
       if lookup_value.is_a? String
-        return Summoner.new(self.class.get("/summoner/by-name/" + lookup_value))
+        return Summoner.new(self.class.get("/summoner/by-name/" + lookup_value.gsub(/\s+/, "")))
       else
         return Summoner.new(self.class.get("/summoner/" + lookup_value.to_s))
       end
@@ -66,7 +66,7 @@ module Vigor
 
     def initialize(data)
       super
-      
+
       return if data["talents"].nil?
       @talents = data["talents"].map {|talent| Talent.new(talent)}
     end
