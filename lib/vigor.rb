@@ -31,8 +31,11 @@ module Vigor
     end
 
     def mastery_pages
-      mastery_hash = Client.get("/summoner/" + @id.to_s + "/masteries")
-      return mastery_hash["pages"].map {|page| MasteryPage.new(page)}
+      @mastery_pages ||= Client.get("/summoner/" + @id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
+    end
+
+    def current_mastery_page
+      mastery_pages.find {|page| page.current? }
     end
   end
 
