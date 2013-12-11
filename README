@@ -10,10 +10,13 @@ vigor = Vigor::Client.new("Your API key")
 dyrus = vigor.summoner("dyrus")
 wildturtle = vigor.summoner(521955)
 
+wildturtle.id
+=> 521955
+
 wildturtle.masteries
 => [List of MasteryPage objects]
 
 wildturtle.masteries.first.current?
-=> False
+=> false
 
 Full documentation and more complete feature set coming very soon!

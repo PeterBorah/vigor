@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.email       = 'peterborah@gmail.com'
   s.files       = ["lib/vigor.rb"]
   s.license     = 'MIT'
+  s.homepage    = 'https://github.com/PeterBorah/vigor'
   s.test_files  = Dir.glob('spec/')
   s.add_runtime_dependency 'httparty'
   s.add_development_dependency 'rspec'
