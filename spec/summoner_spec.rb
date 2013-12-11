@@ -5,6 +5,8 @@ describe Vigor::Summoner, :vcr do
     pages = summoner.mastery_pages
     pages.length.should == 4
 
+    summoner.current_mastery_page.name.should == "AP"
+
     first_page = pages.select{|p| p.name = "Mastery Page 1"}.first
     first_page.should_not be_current
 
