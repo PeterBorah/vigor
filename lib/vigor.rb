@@ -34,22 +34,41 @@ module Vigor
       @mastery_pages ||= Client.get("/summoner/" + @id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
     end
 
+    def rune_pages
+      @rune_pages ||= Client.get("/summoner/" + @id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
+      #Client.get("/summoner/" + @id.to_s + "/runes")["pages"]
+    end
+
     def current_mastery_page
       mastery_pages.find {|page| page.current? }
     end
+
+    def current_rune_page
+      rune_pages.find {|page| page.current? }
+    end
   end
 
-  class MasteryPage
-    attr_accessor :talents, :name
+  class Page
+    attr_accessor :name
 
     def initialize(data)
-      @talents = data["talents"].map {|talent| Talent.new(talent)}
       @name = data["name"]
       @current = data["current"]
     end
 
     def current?
       @current
+    end
+  end
+
+  class MasteryPage < Page
+    attr_accessor :talents
+
+    def initialize(data)
+      super
+      
+      return if data["talents"].nil?
+      @talents = data["talents"].map {|talent| Talent.new(talent)}
     end
   end
 
@@ -60,6 +79,32 @@ module Vigor
       @id = data["id"]
       @rank = data["rank"]
       @name = data["name"]
+    end
+  end
+
+  class RunePage < Page
+    attr_accessor :runes, :id
+
+    def initialize(data)
+      super
+      @id = data["id"]
+
+      return if data["slots"].nil?
+      @runes = data["slots"].map {|slot| Rune.new(slot)}
+    end
+  end
+
+  class Rune
+    attr_accessor :slotId, :runeId, :description, :name, :tier
+
+    def initialize(data)
+      rune = data["rune"]
+
+      @slotId = data["runeSlotId"]
+      @runeId = rune["id"]
+      @description = rune["description"]
+      @name = rune["name"]
+      @tier = rune["tier"]
     end
   end
 end
