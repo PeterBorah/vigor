@@ -13,6 +13,8 @@ module Vigor
     def summoner(lookup_value)
       if lookup_value.is_a? String
         return Summoner.new(self.class.get("/summoner/by-name/" + lookup_value))
+      else
+        return Summoner.new(self.class.get("/summoner/" + lookup_value.to_s))
       end
     end
   end
