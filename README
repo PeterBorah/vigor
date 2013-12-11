@@ -1,0 +1,19 @@
+Simple, idiomatic Ruby wrapper for the League of Legends API. Very much a work in progress. I've decided to release it while unfinished in order to gather feedback about the interface, and what features you would all like to see.
+
+Installation:
+
+gem install vigor
+
+Usage:
+
+vigor = Vigor::Client.new("Your API key")
+dyrus = vigor.summoner("dyrus")
+wildturtle = vigor.summoner(521955)
+
+wildturtle.masteries
+=> [List of MasteryPage objects]
+
+wildturtle.masteries.first.current?
+=> False
+
+Full documentation and more complete feature set coming very soon!
