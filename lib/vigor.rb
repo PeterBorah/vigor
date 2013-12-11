@@ -27,5 +27,34 @@ module Vigor
       @level = data["summonerLevel"]
       @revision_date = DateTime.strptime(data["revisionDate"].to_s,'%s')
     end
+
+    def mastery_pages
+      mastery_hash = Client.get("/summoner/" + @id.to_s + "/masteries")
+      return mastery_hash["pages"].map {|page| MasteryPage.new(page)}
+    end
+  end
+
+  class MasteryPage
+    attr_accessor :talents, :name
+
+    def initialize(data)
+      @talents = data["talents"].map {|talent| Talent.new(talent)}
+      @name = data["name"]
+      @current = data["current"]
+    end
+
+    def current?
+      @current
+    end
+  end
+
+  class Talent
+    attr_accessor :id, :rank, :name
+
+    def initialize(data)
+      @id = data["id"]
+      @rank = data["rank"]
+      @name = data["name"]
+    end
   end
 end
