@@ -13,10 +13,10 @@ wildturtle = vigor.summoner(521955)
 wildturtle.id
 => 521955
 
-wildturtle.masteries
+wildturtle.mastery_pages
 => [List of MasteryPage objects]
 
-wildturtle.masteries.first.current?
+wildturtle.mastery_pages.first.current?
 => false
 
 Full documentation and more complete feature set coming very soon!
