@@ -94,13 +94,13 @@ module Vigor
   end
 
   class Rune
-    attr_accessor :slot_id, :rune_id, :description, :name, :tier
+    attr_accessor :slot, :id, :description, :name, :tier
 
     def initialize(data)
       rune = data["rune"]
 
-      @slot_id = data["runeSlotId"]
-      @rune_id = rune["id"]
+      @slot = data["runeSlotId"]
+      @id = rune["id"]
       @description = rune["description"]
       @name = rune["name"]
       @tier = rune["tier"]
