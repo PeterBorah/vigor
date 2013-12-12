@@ -19,6 +19,9 @@ wildturtle.mastery_pages
 wildturtle.mastery_pages.first.current?
 => false
 
+wildturtle.current_mastery_page
+=> [MasteryPage object]
+
 Full documentation and more complete feature set coming very soon!
 
 This product is not endorsed, certified or otherwise approved in any way by Riot Games, Inc. or any of its affiliates.
