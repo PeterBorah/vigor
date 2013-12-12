@@ -3,11 +3,11 @@ require 'httparty'
 module Vigor
   class Client
     include HTTParty
-    base_uri "http://prod.api.pvp.net/api/lol/na/v1.1"
     # debug_output $stderr
 
-    def initialize(api_key)
+    def initialize(api_key, region = "na")
       self.class.default_params :api_key => api_key
+      self.class.base_uri "http://prod.api.pvp.net/api/lol/#{region}/v1.1"
     end
 
     def summoner(lookup_value)
