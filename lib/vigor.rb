@@ -36,7 +36,6 @@ module Vigor
 
     def rune_pages
       @rune_pages ||= Client.get("/summoner/" + @id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
-      #Client.get("/summoner/" + @id.to_s + "/runes")["pages"]
     end
 
     def current_mastery_page
@@ -66,7 +65,7 @@ module Vigor
 
     def initialize(data)
       super
-      
+
       return if data["talents"].nil?
       @talents = data["talents"].map {|talent| Talent.new(talent)}
     end
@@ -95,13 +94,13 @@ module Vigor
   end
 
   class Rune
-    attr_accessor :slotId, :runeId, :description, :name, :tier
+    attr_accessor :slot_id, :rune_id, :description, :name, :tier
 
     def initialize(data)
       rune = data["rune"]
 
-      @slotId = data["runeSlotId"]
-      @runeId = rune["id"]
+      @slot_id = data["runeSlotId"]
+      @rune_id = rune["id"]
       @description = rune["description"]
       @name = rune["name"]
       @tier = rune["tier"]
