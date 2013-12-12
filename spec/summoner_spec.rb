@@ -1,6 +1,4 @@
-require 'vigor'
-
-describe Vigor::Summoner do
+describe Vigor::Summoner, :vcr do
   it "can fetch masteries" do
     vigor = Vigor::Client.new(ENV["API_KEY"])
     summoner = vigor.summoner("semiel")

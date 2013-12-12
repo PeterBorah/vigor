@@ -1,6 +1,4 @@
-require 'vigor'
-
-describe Vigor::Client do
+describe Vigor::Client, :vcr do
   it "can find a summoner by name" do
     vigor = Vigor::Client.new(ENV["API_KEY"])
     summoner = vigor.summoner("semiel")
@@ -32,6 +30,6 @@ describe Vigor::Client do
     summoner = vigor.summoner("Best Riven NA")
     summoner.id.should == 32400810
     summoner.name.should == "Best Riven NA"
-    summoner.level == 30
+    summoner.level.should == 30
   end
 end
