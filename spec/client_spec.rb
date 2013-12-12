@@ -26,4 +26,12 @@ describe Vigor::Client do
     summoner.name.should == "Froggen"
     summoner.level.should == 30
   end
+
+  it "can find summoners whose names have whitespace" do
+    vigor = Vigor::Client.new(ENV["API_KEY"])
+    summoner = vigor.summoner("Best Riven NA")
+    summoner.id.should == 32400810
+    summoner.name.should == "Best Riven NA"
+    summoner.level == 30
+  end
 end
