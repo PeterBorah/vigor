@@ -30,6 +30,6 @@ describe Vigor::Client, :vcr do
     summoner = vigor.summoner("Best Riven NA")
     summoner.id.should == 32400810
     summoner.name.should == "Best Riven NA"
-    summoner.level == 30
+    summoner.level.should == 30
   end
 end
