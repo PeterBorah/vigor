@@ -30,21 +30,22 @@ module Vigor
       @revision_date = DateTime.strptime(data["revisionDate"].to_s,'%s')
     end
 
-    def mastery_pages
+    def mastery_pages (option = nil)
       @mastery_pages ||= Client.get("/summoner/" + @id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
+      if option == :current
+        @mastery_pages.find {|page| page.current? }
+      else
+        @mastery_pages
+      end
     end
 
-    def rune_pages
+    def rune_pages (option = nil)
       @rune_pages ||= Client.get("/summoner/" + @id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
-      #Client.get("/summoner/" + @id.to_s + "/runes")["pages"]
-    end
-
-    def current_mastery_page
-      mastery_pages.find {|page| page.current? }
-    end
-
-    def current_rune_page
-      rune_pages.find {|page| page.current? }
+      if option == :current
+        @rune_pages.find {|page| page.current? }
+      else
+        @rune_pages
+      end
     end
   end
 
