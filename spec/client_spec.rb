@@ -1,6 +1,4 @@
-require 'vigor'
-
-describe Vigor::Client do
+describe Vigor::Client, :vcr do
   it "can find a summoner by name" do
     vigor = Vigor::Client.new(ENV["API_KEY"])
     summoner = vigor.summoner("semiel")
