@@ -11,11 +11,11 @@ module Vigor
     end
 
     def mastery_pages
-      @mastery_pages ||= Client.get("/summoner/" + @id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
+      Client.get("/summoner/" + @id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
     end
 
     def rune_pages
-      @rune_pages ||= Client.get("/summoner/" + @id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
+      Client.get("/summoner/" + @id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
     end
 
     def current_mastery_page
