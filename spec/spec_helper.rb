@@ -6,6 +6,7 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.filter_sensitive_data("<API_KEY>") { ENV['API_KEY'] }
+  c.default_cassette_options[:record] = :new_episodes
 end
 
 RSpec.configure do |c|
