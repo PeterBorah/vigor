@@ -7,10 +7,10 @@ describe Vigor::Summoner, :vcr do
 
     summoner.current_mastery_page.name.should == "AP"
 
-    first_page = pages.select{|p| p.name = "Mastery Page 1"}.first
+    first_page = pages.find{|p| p.name = "Mastery Page 1"}
     first_page.should_not be_current
 
-    hardiness = first_page.talents.select{|t| t.name = "Hardiness"}.first
+    hardiness = first_page.find{|t| t.name = "Hardiness"}
     hardiness.id.should == 4233
   end
 
@@ -24,7 +24,7 @@ describe Vigor::Summoner, :vcr do
     current.name.should == "AP/MPen/Def (AP Carry)"
     current.should be_current
 
-    slot_1 = current.runes.select{|r| r.slot == 1}.first
+    slot_1 = current.find{|r| r.slot == 1}
     slot_1.id.should == 5273
   end
 end
