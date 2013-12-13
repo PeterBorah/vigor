@@ -61,6 +61,7 @@ module Vigor
   end
 
   class MasteryPage < Page
+    include Enumerable
     attr_accessor :talents
 
     def initialize(data)
@@ -68,6 +69,12 @@ module Vigor
 
       return if data["talents"].nil?
       @talents = data["talents"].map {|talent| Talent.new(talent)}
+    end
+
+    def each(&block)
+      @talents.each do |talent|
+        block.call(talent)
+      end
     end
   end
 
@@ -82,6 +89,7 @@ module Vigor
   end
 
   class RunePage < Page
+    include Enumerable
     attr_accessor :runes, :id
 
     def initialize(data)
@@ -90,6 +98,12 @@ module Vigor
 
       return if data["slots"].nil?
       @runes = data["slots"].map {|slot| Rune.new(slot)}
+    end
+
+    def each(&block)
+      @runes.each do |rune|
+        block.call(rune)
+      end
     end
   end
 
