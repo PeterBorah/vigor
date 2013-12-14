@@ -32,4 +32,27 @@ describe Vigor::Client, :vcr do
     summoner.name.should == "Best Riven NA"
     summoner.level.should == 30
   end
+
+  it "raises an exception when using a bad key" do
+    vigor = Vigor::Client.new("bad_key")
+    lambda { vigor.summoner("semiel") }.should raise_error(Vigor::Error::Unauthorized)
+  end
+
+  it "raises an exception when no summoner name exists" do
+    vigor = Vigor::Client.new(ENV["API_KEY"])
+    lambda { vigor.summoner("invalid1234") }.should raise_error(Vigor::Error::SummonerNotFound)
+  end
+
+  it "raises an exception when no summoner id exists" do
+    vigor = Vigor::Client.new(ENV["API_KEY"])
+    lambda { vigor.summoner(0)}.should raise_error(Vigor::Error::SummonerNotFound)
+  end
+
+  it "raises an exception when the API is down" do
+    stub_request(:get, "http://prod.api.pvp.net/api/lol/na/v1.1/summoner/by-name/semiel?api_key=#{ENV["API_KEY"]}").
+        to_return(:status => 500, :body => "", :headers => {})
+    vigor = Vigor::Client.new(ENV["API_KEY"])
+    lambda { vigor.summoner("semiel") }.should raise_error(Vigor::Error::InternalServerError)
+  end
+
 end
