@@ -11,11 +11,11 @@ class Vigor
     end
 
     def mastery_pages
-      Client.get("/summoner/" + @id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
+      Vigor.mastery_pages(@id)
     end
 
     def rune_pages
-      Client.get("/summoner/" + @id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
+      Vigor.rune_pages(@id)
     end
 
     def current_mastery_page

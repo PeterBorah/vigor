@@ -21,4 +21,12 @@ class Vigor
       return Summoner.new(Client.get("/summoner/" + lookup_value.to_s))
     end
   end
+
+  def self.mastery_pages(id)
+    Client.get("/summoner/" + id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
+  end
+
+  def self.rune_pages(id)
+    Client.get("/summoner/" + id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
+  end
 end
