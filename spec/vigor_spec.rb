@@ -87,4 +87,25 @@ describe Vigor, :vcr do
     free_champs = Vigor.free_to_play
     free_champs.length.should == 10
   end
+
+  it "can get recent games" do
+    Vigor.configure(ENV["API_KEY"])
+    recent_games = Vigor.summoner("Semiel").recent_games
+    recent_games.length.should == 10
+
+    most_recent = recent_games.first
+    most_recent.level.should == 30
+    most_recent.mode.should == "ARAM"
+    most_recent.type.should == "MATCHED_GAME"
+    most_recent.should_not be_invalid
+    most_recent.map.should == 12
+    most_recent.spells.should == [4, 7]
+
+    double_kills = most_recent.stats.find {|stat| stat["id"] == 16 }
+    double_kills["value"].should == 1
+
+    players = most_recent.fellow_players
+    players.length.should == 9
+    players.first.champion_id.should == 33
+  end
 end

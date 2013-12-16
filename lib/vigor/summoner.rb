@@ -9,11 +9,13 @@ class Vigor
     end
 
     def add_data(data)
-      @id = data["id"]
+      @id = data["id"] || data["summonerId"]
       @fields[:name] = data["name"]
       @fields[:profile_icon_id] = data["profileIconId"]
       @fields[:level] = data["summonerLevel"]
-      @fields[:revision_date] = DateTime.strptime(data["revisionDate"].to_s,'%s')
+      @fields[:revision_date] = DateTime.strptime(data["revisionDate"].to_s,'%s') if data["revisionDate"] # Will blow up otherwise
+      @fields[:champion_id] = data["championId"]
+      @fields[:team_id] = data["teamId"]
     end
 
     def mastery_pages
@@ -32,9 +34,15 @@ class Vigor
       rune_pages.find {|page| page.current? }
     end
 
+    def recent_games
+      Vigor.recent_games(@id)
+    end
+
     def method_missing(meth)
       if Available_fields.include? meth
         return get_or_fetch_field(meth)
+      elsif @fields[meth]
+        return @fields[meth]
       else
         super
       end

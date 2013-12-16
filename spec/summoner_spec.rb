@@ -27,4 +27,11 @@ describe Vigor::Summoner, :vcr do
     slot_1 = current.find{|r| r.slot == 1}
     slot_1.id.should == 5273
   end
+
+  it "will grab extra information when needed" do
+    Vigor.configure(ENV["API_KEY"])
+    player = Vigor.recent_games("23893133").first.fellow_players.first
+    player.name.should == "DerpyFoo"
+    player.profile_icon_id.should == 582
+  end
 end

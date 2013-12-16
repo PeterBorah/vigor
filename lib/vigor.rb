@@ -7,6 +7,7 @@ require_relative 'vigor/rune_page'
 require_relative 'vigor/rune'
 require_relative 'vigor/error'
 require_relative 'vigor/champion'
+require_relative 'vigor/game'
 
 class Vigor
 
@@ -25,11 +26,11 @@ class Vigor
   end
 
   def self.mastery_pages(id)
-    Client.get("/summoner/" + id.to_s + "/masteries")["pages"].map {|page| MasteryPage.new(page)}
+    Client.get("/summoner/#{id.to_s}/masteries")["pages"].map {|page| MasteryPage.new(page)}
   end
 
   def self.rune_pages(id)
-    Client.get("/summoner/" + id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
+    Client.get("/summoner/#{id.to_s}/runes")["pages"].map {|page| RunePage.new(page)}
   end
 
   def self.all_champions
@@ -44,4 +45,7 @@ class Vigor
     self.all_champions.find {|champ| champ.name == name}
   end
 
+  def self.recent_games(id)
+    Client.get("/game/by-summoner/#{id.to_s}/recent")["games"].map {|game| Game.new(game)}
+  end
 end
