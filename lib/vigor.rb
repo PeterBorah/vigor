@@ -1,17 +1,18 @@
-require 'vigor/summoner'
-require 'vigor/client'
-require 'vigor/page'
-require 'vigor/mastery_page'
-require 'vigor/talent'
-require 'vigor/rune_page'
-require 'vigor/rune'
-require 'vigor/error'
+require_relative 'vigor/summoner'
+require_relative 'vigor/client'
+require_relative 'vigor/page'
+require_relative 'vigor/mastery_page'
+require_relative 'vigor/talent'
+require_relative 'vigor/rune_page'
+require_relative 'vigor/rune'
+require_relative 'vigor/error'
 
 class Vigor
 
   def self.configure(api_key, region = "na")
     Client.default_params :api_key => api_key
     Client.base_uri "http://prod.api.pvp.net/api/lol/#{region}/v1.1"
+    self
   end
 
   def self.summoner(lookup_value)
