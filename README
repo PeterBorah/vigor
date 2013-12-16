@@ -6,9 +6,9 @@ gem install vigor
 
 Usage:
 
-vigor = Vigor::Client.new("Your API key")
-dyrus = vigor.summoner("dyrus")
-wildturtle = vigor.summoner(521955)
+Vigor.configure("Your API key")
+dyrus = Vigor.summoner("dyrus")
+wildturtle = Vigor.summoner(521955)
 
 wildturtle.id
 => 521955

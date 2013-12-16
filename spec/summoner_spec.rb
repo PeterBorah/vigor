@@ -1,7 +1,7 @@
 describe Vigor::Summoner, :vcr do
   it "can fetch masteries" do
-    vigor = Vigor::Client.new(ENV["API_KEY"])
-    summoner = vigor.summoner("semiel")
+    Vigor.configure(ENV["API_KEY"])
+    summoner = Vigor.summoner("semiel")
     pages = summoner.mastery_pages
     pages.length.should == 4
 
@@ -15,8 +15,8 @@ describe Vigor::Summoner, :vcr do
   end
 
   it "can fetch runes" do
-    vigor = Vigor::Client.new(ENV["API_KEY"])
-    summoner = vigor.summoner("semiel")
+    Vigor.configure(ENV["API_KEY"])
+    summoner = Vigor.summoner("semiel")
     pages = summoner.rune_pages
     pages.length.should == 9
 

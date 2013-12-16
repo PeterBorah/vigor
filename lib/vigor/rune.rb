@@ -1,4 +1,4 @@
-module Vigor
+class Vigor
   class Rune
     attr_accessor :slot, :id, :description, :name, :tier
 

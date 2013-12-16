@@ -1,4 +1,4 @@
-module Vigor
+class Vigor
   class RunePage < Page
     include Enumerable
     attr_accessor :runes, :id

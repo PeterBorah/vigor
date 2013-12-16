@@ -1,5 +1,5 @@
-module Vigor
-  module Error
+class Vigor
+  class Error
 
     def self.from_status(status)
       case status

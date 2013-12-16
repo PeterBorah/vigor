@@ -1,4 +1,4 @@
-module Vigor
+class Vigor
   class Page
     attr_accessor :name
 

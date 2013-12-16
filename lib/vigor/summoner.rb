@@ -1,4 +1,4 @@
-module Vigor
+class Vigor
   class Summoner
     attr_accessor :id, :name, :profile_icon_id, :level, :revision_date
 

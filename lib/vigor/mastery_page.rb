@@ -1,4 +1,4 @@
-module Vigor
+class Vigor
   class MasteryPage < Page
     include Enumerable
     attr_accessor :talents

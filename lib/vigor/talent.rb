@@ -1,4 +1,4 @@
-module Vigor
+class Vigor
   class Talent
     attr_accessor :id, :rank, :name
 
