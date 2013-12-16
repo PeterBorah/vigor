@@ -33,5 +33,6 @@ describe Vigor::Summoner, :vcr do
     player = Vigor.recent_games("23893133").first.fellow_players.first
     player.name.should == "DerpyFoo"
     player.profile_icon_id.should == 582
+    player.team_id.should == 100
   end
 end

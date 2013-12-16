@@ -3,17 +3,26 @@ class Vigor
     attr_accessor :id
     Available_fields = [:name, :profile_icon_id, :level, :revision_date]
 
-    def initialize(data)
+    def initialize(data, source = :summoner)
       @fields = {}
-      add_data(data)
+      case source
+      when :summoner
+        add_summoner_data(data)
+      when :game
+        add_game_data(data)
+      end
     end
 
-    def add_data(data)
-      @id = data["id"] || data["summonerId"]
+    def add_summoner_data(data)
+      @id = data["id"]
       @fields[:name] = data["name"]
       @fields[:profile_icon_id] = data["profileIconId"]
       @fields[:level] = data["summonerLevel"]
-      @fields[:revision_date] = DateTime.strptime(data["revisionDate"].to_s,'%s') if data["revisionDate"] # Will blow up otherwise
+      @fields[:revision_date] = DateTime.strptime(data["revisionDate"].to_s,'%s')
+    end
+
+    def add_game_data(data)
+      @id = data["summonerId"]
       @fields[:champion_id] = data["championId"]
       @fields[:team_id] = data["teamId"]
     end
@@ -49,7 +58,7 @@ class Vigor
     end
 
     def get_or_fetch_field(field)
-      add_data(Client.get("/summoner/" + @id.to_s)) unless @fields[field]
+      add_summoner_data(Client.get("/summoner/" + @id.to_s)) unless @fields[field]
       @fields[field]
     end
   end
