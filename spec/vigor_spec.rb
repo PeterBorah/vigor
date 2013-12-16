@@ -1,4 +1,4 @@
-describe Vigor::Client, :vcr do
+describe Vigor, :vcr do
   it "can find a summoner by name" do
     Vigor.configure(ENV["API_KEY"])
     summoner = Vigor.summoner("semiel")
@@ -55,4 +55,30 @@ describe Vigor::Client, :vcr do
     lambda { Vigor.summoner("semiel") }.should raise_error(Vigor::Error::InternalServerError)
   end
 
+  it "can get all champions" do
+    Vigor.configure(ENV["API_KEY"])
+    champs = Vigor.all_champions
+    champs.length.should == 117
+    zyra = champs.last
+
+    zyra.name.should == "Zyra"
+    zyra.id.should == 143
+
+    zyra.should be_in_ranked
+    zyra.should be_active
+    zyra.has_bot?.should be_false
+    zyra.has_mm_bot?.should be_true
+    zyra.should_not be_free_to_play
+
+    zyra.defense.should == 3
+    zyra.attack.should == 4
+    zyra.difficulty.should == 7
+    zyra.magic.should == 8
+  end
+
+  it "can get a champion by name" do
+    Vigor.configure(ENV["API_KEY"])
+    zyra = Vigor.champion("Zyra")
+    zyra.id.should == 143
+  end
 end

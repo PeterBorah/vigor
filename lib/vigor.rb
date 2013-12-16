@@ -6,6 +6,7 @@ require_relative 'vigor/talent'
 require_relative 'vigor/rune_page'
 require_relative 'vigor/rune'
 require_relative 'vigor/error'
+require_relative 'vigor/champion'
 
 class Vigor
 
@@ -30,4 +31,13 @@ class Vigor
   def self.rune_pages(id)
     Client.get("/summoner/" + id.to_s + "/runes")["pages"].map {|page| RunePage.new(page)}
   end
+
+  def self.all_champions
+    Client.get("/champion")["champions"].map {|champ| Champion.new(champ)}
+  end
+
+  def self.champion(name)
+    self.all_champions.find {|champ| champ.name == name}
+  end
+
 end
