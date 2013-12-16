@@ -81,4 +81,10 @@ describe Vigor, :vcr do
     zyra = Vigor.champion("Zyra")
     zyra.id.should == 143
   end
+
+  it "can get free-to-play champions" do
+    Vigor.configure(ENV["API_KEY"])
+    free_champs = Vigor.free_to_play
+    free_champs.length.should == 10
+  end
 end

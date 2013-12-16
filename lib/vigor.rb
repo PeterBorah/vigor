@@ -36,6 +36,10 @@ class Vigor
     Client.get("/champion")["champions"].map {|champ| Champion.new(champ)}
   end
 
+  def self.free_to_play
+    Client.get("/champion/", query: {"freeToPlay" => true})["champions"].map {|champ| Champion.new(champ)}
+  end
+
   def self.champion(name)
     self.all_champions.find {|champ| champ.name == name}
   end
