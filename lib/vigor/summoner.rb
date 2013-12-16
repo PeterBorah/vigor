@@ -61,5 +61,9 @@ class Vigor
       add_summoner_data(Client.get("/summoner/" + @id.to_s)) unless @fields[field]
       @fields[field]
     end
+
+    def respond_to_missing?(meth, *)
+      (Available_fields + @fields.keys).include?(meth) || super
+    end
   end
 end
