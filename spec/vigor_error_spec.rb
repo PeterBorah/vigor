@@ -24,4 +24,8 @@ describe Vigor, :vcr do
   it "raises an exception when Vigor has not been configured" do
     lambda { Vigor.summoner("semiel") }.should raise_error(Vigor::Error::NotConfigured)
   end
+
+  it "raises an exception when Vigor is configured with an invalid region" do
+    lambda { Vigor.configure(ENV["API_KEY"], "xyz") }.should raise_error(Vigor::Error::InvalidRegion)
+  end
 end

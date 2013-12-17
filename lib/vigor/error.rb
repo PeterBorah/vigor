@@ -32,5 +32,6 @@ class Vigor
 
     # non-api errors below
     class NotConfigured < StandardError; end
+    class InvalidRegion < StandardError; end
   end
 end

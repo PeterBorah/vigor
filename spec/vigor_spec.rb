@@ -76,16 +76,3 @@ describe Vigor, :vcr do
     players.first.champion_id.should == 33
   end
 end
-
-describe Vigor, :vcr do
-  before(:each) do
-    Vigor.configure(ENV["API_KEY"], "euw")
-  end
-
-  it "works on servers other than NA" do
-    summoner = Vigor.summoner("Froggen")
-    summoner.id.should == 19531813
-    summoner.name.should == "Froggen"
-    summoner.level.should == 30
-  end
-end
