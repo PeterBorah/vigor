@@ -11,7 +11,11 @@ require_relative 'vigor/game'
 
 class Vigor
 
+  @@regions = ['na', 'euw', 'eune', 'br', 'tr']
+
   def self.configure(api_key, region = "na")
+    region.downcase!
+    raise Vigor::Error::InvalidRegion, "Invalid Region Configuration" unless @@regions.include?(region)
     Client.default_params :api_key => api_key
     Client.base_uri "http://prod.api.pvp.net/api/lol/#{region}/v1.1"
     self

@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://prod.api.pvp.net/api/lol/euw/v1.1/summoner/by-name/Froggen?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Tue, 17 Dec 2013 08:52:06 GMT
+      Server:
+      - Jetty(9.1.0.v20131115)
+      X-Newrelic-App-Data:
+      - PxQFWFFSDwQTVVdUBAgPUkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksIPR4SRg8JWVkEFD8XUUlJDwNaVGtJH19XXgcbQ0p3J2xLGhQEHANJCU8BUQJbVgAOVVBPFQIcRgRWVQNSUwVQUgZaVgJVVAQaPw==
+      Content-Length:
+      - '144'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":19531813,"name":"Froggen","profileIconId":562,"summonerLevel":30,"revisionDate":1387207626000,"revisionDateStr":"12/16/2013
+        03:27 PM UTC"}'
+    http_version: 
+  recorded_at: Tue, 17 Dec 2013 08:52:06 GMT
+recorded_with: VCR 2.8.0

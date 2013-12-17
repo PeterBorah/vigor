@@ -18,17 +18,20 @@ class Vigor
 
     class ApiError < StandardError; end
 
-    # 400 response - invalid API endpoint. Should never be raised if gem build is stable,
+    # 400 response - invalid API endpoint. Should never be raised if gem build is stable.
     class BadRequest < ApiError; end
 
-    # 401 response - when API_KEY is missing or invalid,
+    # 401 response - when API_KEY is missing or invalid.
     class Unauthorized < ApiError; end
 
-    # 404 response - no summoner found,
+    # 404 response - no summoner found.
     class SummonerNotFound < ApiError; end
 
     # 500 response - when Riot's API is down.
     class InternalServerError < ApiError; end
 
+    # non-api errors below
+    class NotConfigured < StandardError; end
+    class InvalidRegion < StandardError; end
   end
 end
