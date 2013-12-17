@@ -1,4 +1,6 @@
-Simple, idiomatic Ruby wrapper for the League of Legends API. Very much a work in progress. I've decided to release it while unfinished in order to gather feedback about the interface, and what features you would all like to see.
+Simple, idiomatic Ruby wrapper for the League of Legends API. We're moving quickly toward a complete feature set and a 1.0.0 release!
+
+Vigor makes interacting with the League of Legends API simple and painless, by providing a streamlined and intuitive inteface.
 
 Installation:
 
@@ -13,15 +15,30 @@ wildturtle = Vigor.summoner(521955)
 wildturtle.id
 => 521955
 
-wildturtle.mastery_pages
-=> [List of MasteryPage objects]
+wildturtle.recent_games
+=> [List of Game objects]
 
-wildturtle.mastery_pages.first.current?
-=> false
+wildturtle.recent_games.fellow_players.first
+=> [Player object]
 
 wildturtle.current_mastery_page
 => [MasteryPage object]
 
-Full documentation and more complete feature set coming very soon!
+Full documentation coming with the 1.0.0 release. In the meantime, here are some methods you might want to check out:
+
+Vigor.summoner(id or "name")
+Vigor.mastery_pages(id)
+Vigor.all_champions
+Vigor.free_to_play
+Vigor.champion("name")
+Vigor.recent_games(id)
+
+Summoner.mastery_pages
+Summoner.rune_pages
+Summoner.current_mastery_page
+Summoner.current_rune_page
+Summoner.recent_games
+
+Game.fellow_players # Note that these are full player objects, and will dynamically load missing information like "name".
 
 This product is not endorsed, certified or otherwise approved in any way by Riot Games, Inc. or any of its affiliates.
