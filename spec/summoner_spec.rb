@@ -1,6 +1,9 @@
 describe Vigor::Summoner, :vcr do
-  it "can fetch masteries" do
+  before(:each) do
     Vigor.configure(ENV["API_KEY"])
+  end
+
+  it "can fetch masteries" do
     summoner = Vigor.summoner("semiel")
     pages = summoner.mastery_pages
     pages.length.should == 4
@@ -15,7 +18,6 @@ describe Vigor::Summoner, :vcr do
   end
 
   it "can fetch runes" do
-    Vigor.configure(ENV["API_KEY"])
     summoner = Vigor.summoner("semiel")
     pages = summoner.rune_pages
     pages.length.should == 9
