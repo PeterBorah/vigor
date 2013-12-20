@@ -10,10 +10,14 @@ VCR.configure do |c|
   c.default_cassette_options[:record] = :new_episodes
 end
 
-RSpec.configure do |c|
-  c.treat_symbols_as_metadata_keys_with_true_values = true
+RSpec.configure do |config|
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 
-  c.before(:each) do
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
+  config.before(:each) do
     Vigor::Client.default_options = {}
   end
 end
