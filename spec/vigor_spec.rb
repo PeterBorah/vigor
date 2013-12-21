@@ -7,7 +7,7 @@ describe Vigor, :vcr do
     summoner = Vigor.summoner("semiel")
     expect(summoner.id).to eq 23893133
     expect(summoner.name).to eq "Semiel"
-    expect(summoner.profile_icon_id).to eq 518
+    expect(summoner.profile_icon_id).to eq 562
     expect(summoner.level).to eq 30 
   end
 
@@ -15,7 +15,7 @@ describe Vigor, :vcr do
     summoner = Vigor.summoner(23893133)
     expect(summoner.id).to eq 23893133
     expect(summoner.name).to eq "Semiel"
-    expect(summoner.profile_icon_id).to eq 518
+    expect(summoner.profile_icon_id).to eq 562
     expect(summoner.level).to eq 30
   end
 
@@ -62,17 +62,17 @@ describe Vigor, :vcr do
 
     most_recent = recent_games.first
     expect(most_recent.level).to eq 30
-    expect(most_recent.mode).to eq "ARAM"
+    expect(most_recent.mode).to eq "FIRSTBLOOD"
     expect(most_recent.type).to eq "MATCHED_GAME"
     expect(most_recent).to_not be_invalid
     expect(most_recent.map).to eq 12
     expect(most_recent.spells).to eq [4, 7]
 
-    double_kills = most_recent.stats.find {|stat| stat["id"] == 16 }
-    expect(double_kills["value"]).to eq 1
+    true_damage_taken = most_recent.stats.find {|stat| stat["id"] == 104 }
+    expect(true_damage_taken["value"]).to eq 90
 
     players = most_recent.fellow_players
-    expect(players.length).to eq 9
-    expect(players.first.champion_id).to eq 33
+    expect(players.length).to eq 1
+    expect(players.first.champion_id).to eq 1
   end
 end

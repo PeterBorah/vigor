@@ -15,7 +15,7 @@ describe Vigor, :vcr do
   end
 
   it "raises an exception when the API is down" do
-    stub_request(:get, "http://prod.api.pvp.net/api/lol/na/v1.1/summoner/by-name/semiel?api_key=#{ENV["API_KEY"]}").
+    stub_request(:get, "http://prod.api.pvp.net/api/lol/na/v1.2/summoner/by-name/semiel?api_key=#{ENV["API_KEY"]}").
         to_return(:status => 500, :body => "", :headers => {})
     Vigor.configure(ENV["API_KEY"])
     expect{ Vigor.summoner("semiel") }.to raise_error(Vigor::Error::InternalServerError)
