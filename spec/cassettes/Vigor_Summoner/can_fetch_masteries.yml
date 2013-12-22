@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://prod.api.pvp.net/api/lol/na/v1.1/summoner/by-name/semiel?api_key=<API_KEY>
+    uri: http://prod.api.pvp.net/api/lol/na/v1.2/summoner/by-name/semiel?api_key=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -17,28 +17,27 @@ http_interactions:
       Access-Control-Allow-Methods:
       - GET, POST, DELETE, PUT
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 12 Dec 2013 10:34:37 GMT
+      - Sat, 21 Dec 2013 08:37:14 GMT
       Server:
       - Jetty(9.1.0.v20131115)
       X-Newrelic-App-Data:
-      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksIPR4SRg8JWVkEFD8XUUlJDwNaVGtJH19XXgcbQ0p3J2xLGhQEHANJCU8BUQBQUQICV0pOCR8SVlcGUVdUXwdXAQoEUFBXEj8=
+      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksLPR4SRg8JWVkEFD8XUUlJDwNaVGtJH19XXgcbQ0p3J2xLGhQEHANJCU8BUQFVUwUBVFFPFQIcRlBVUQYGVFFSDlBaU1RVUlQaPw==
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"id":23893133,"name":"Semiel","profileIconId":518,"summonerLevel":30,"revisionDate":1386532311000,"revisionDateStr":"12/08/2013
-        07:51 PM UTC"}'
+      encoding: UTF-8
+      string: '{"id":23893133,"name":"Semiel","profileIconId":562,"summonerLevel":30,"revisionDate":1387487462000}'
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 10:34:21 GMT
+  recorded_at: Sat, 21 Dec 2013 08:37:17 GMT
 - request:
     method: get
-    uri: http://prod.api.pvp.net/api/lol/na/v1.1/summoner/23893133/masteries?api_key=<API_KEY>
+    uri: http://prod.api.pvp.net/api/lol/na/v1.2/summoner/23893133/masteries?api_key=<API_KEY>
     body:
       encoding: US-ASCII
       string: ''
@@ -53,93 +52,95 @@ http_interactions:
       Access-Control-Allow-Methods:
       - GET, POST, DELETE, PUT
       Access-Control-Allow-Origin:
-      - ! '*'
+      - '*'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 12 Dec 2013 10:34:37 GMT
+      - Sat, 21 Dec 2013 08:37:15 GMT
       Server:
       - Jetty(9.1.0.v20131115)
       X-Newrelic-App-Data:
-      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksIPR4SRg8JWVkEFD8XSEMRDA9YX1IULVVLb00LAhFEB0oLXUsUGnQgbUgTTQNMVBoHT1ZVDAoAXFhbGxwGSkYABlBaA1FaB1cNUA5aAAMKR2Q=
-      Content-Length:
-      - '2757'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! '{"summonerId":23893133,"pages":[{"name":"Mastery Page 4","current":false,"talents":[{"id":4233,"name":"Hardiness","rank":3},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
-        Weakness","rank":1},{"id":4213,"name":"Enchanted Armor","rank":2},{"id":4244,"name":"Evasive","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4222,"name":"Veteran
-        Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4252,"name":"Tenacious","rank":4},{"id":4123,"name":"Mental
-        Force","rank":3},{"id":4262,"name":"Legendary Guardian","rank":1},{"id":4133,"name":"Arcane
-        Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1}]},{"name":"Mastery
-        Page 1","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4242,"name":"Swiftness","rank":1},{"id":4213,"name":"Enchanted
-        Armor","rank":2},{"id":4211,"name":"Block","rank":1},{"id":4244,"name":"Evasive","rank":1},{"id":4333,"name":"Vampirism","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4322,"name":"Summoner''s
-        Insight","rank":1},{"id":4323,"name":"Strength of Spirit","rank":1},{"id":4222,"name":"Veteran
-        Scars","rank":3},{"id":4252,"name":"Tenacious","rank":4},{"id":4262,"name":"Legendary
-        Guardian","rank":1},{"id":4312,"name":"Fleet of Foot","rank":3},{"id":4313,"name":"Meditation","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4233,"name":"Hardiness","rank":2}]},{"name":"Mastery
-        Page 2","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
-        Weakness","rank":1},{"id":4134,"name":"Executioner","rank":3},{"id":4154,"name":"Arcane
-        Blade","rank":1},{"id":4222,"name":"Veteran Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4144,"name":"Dangerous
-        Game","rank":1},{"id":4152,"name":"Devastating Strikes","rank":3},{"id":4123,"name":"Mental
-        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4162,"name":"Havoc","rank":1}]},{"name":"AP","current":true,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
-        Weakness","rank":1},{"id":4134,"name":"Executioner","rank":3},{"id":4154,"name":"Arcane
-        Blade","rank":1},{"id":4222,"name":"Veteran Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4144,"name":"Dangerous
-        Game","rank":1},{"id":4152,"name":"Devastating Strikes","rank":3},{"id":4123,"name":"Mental
-        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4162,"name":"Havoc","rank":1}]}]}'
-    http_version: 
-  recorded_at: Thu, 12 Dec 2013 10:34:21 GMT
-- request:
-    method: get
-    uri: http://prod.api.pvp.net/api/lol/na/v1.1/summoner/23893133/masteries?api_key=<API_KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type
-      Access-Control-Allow-Methods:
-      - GET, POST, DELETE, PUT
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 13 Dec 2013 20:03:18 GMT
-      Server:
-      - Jetty(9.1.0.v20131115)
-      X-Newrelic-App-Data:
-      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksIPR4SRg8JWVkEFD8XSEMRDA9YX1IULVVLb00LAhFEB0oLXUsUGnQgbUgTTQNMVBoHT1ZWDQoHUFRaAx0aV0gTBQZTVQJVU1UPAAsLAVRWR2Q=
+      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksLPR4SRg8JWVkEFD8XSEMRDA9YX1IULVVLb00LAhFEB0oLXUsUGnQgbUgTTQNMVBoHT1ZXAQUDUlBRBB0aV0gTAQtUV1RUBlpaVQ0BUAUHARs8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"summonerId":23893133,"pages":[{"name":"Mastery Page 4","current":false,"talents":[{"id":4233,"name":"Hardiness","rank":3},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
-        Weakness","rank":1},{"id":4213,"name":"Enchanted Armor","rank":2},{"id":4244,"name":"Evasive","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4222,"name":"Veteran''s
-        Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4252,"name":"Legendary
-        Guardian","rank":4},{"id":4123,"name":"Mental Force","rank":3},{"id":4262,"name":"Tenacious","rank":1},{"id":4133,"name":"Arcane
-        Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1}]},{"name":"Mastery
-        Page 1","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4242,"name":"Swiftness","rank":1},{"id":4213,"name":"Enchanted
+      encoding: UTF-8
+      string: '{"summonerId":23893133,"pages":[{"id":35512964,"name":"Mastery Page
+        1","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4242,"name":"Swiftness","rank":1},{"id":4213,"name":"Enchanted
         Armor","rank":2},{"id":4211,"name":"Block","rank":1},{"id":4244,"name":"Evasive","rank":1},{"id":4333,"name":"Vampirism","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4322,"name":"Summoner''s
         Insight","rank":1},{"id":4323,"name":"Strength of Spirit","rank":1},{"id":4222,"name":"Veteran''s
         Scars","rank":3},{"id":4252,"name":"Legendary Guardian","rank":4},{"id":4262,"name":"Tenacious","rank":1},{"id":4312,"name":"Fleet
-        of Foot","rank":3},{"id":4313,"name":"Meditation","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4233,"name":"Hardiness","rank":2}]},{"name":"Mastery
-        Page 2","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
+        of Foot","rank":3},{"id":4313,"name":"Meditation","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4233,"name":"Hardiness","rank":2}]},{"id":35512965,"name":"Mastery
+        Page 2","current":true,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
         Weakness","rank":1},{"id":4134,"name":"Executioner","rank":3},{"id":4154,"name":"Arcane
         Blade","rank":1},{"id":4222,"name":"Veteran''s Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4144,"name":"Dangerous
         Game","rank":1},{"id":4152,"name":"Devastating Strikes","rank":3},{"id":4123,"name":"Mental
-        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4162,"name":"Havoc","rank":1}]},{"name":"AP","current":true,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
+        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4162,"name":"Havoc","rank":1}]},{"id":35512966,"name":"AP","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
         Weakness","rank":1},{"id":4134,"name":"Executioner","rank":3},{"id":4154,"name":"Arcane
         Blade","rank":1},{"id":4222,"name":"Veteran''s Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4144,"name":"Dangerous
         Game","rank":1},{"id":4152,"name":"Devastating Strikes","rank":3},{"id":4123,"name":"Mental
-        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4162,"name":"Havoc","rank":1}]}]}'
+        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4162,"name":"Havoc","rank":1}]},{"id":35512967,"name":"Mastery
+        Page 4","current":false,"talents":[{"id":4233,"name":"Hardiness","rank":3},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
+        Weakness","rank":1},{"id":4213,"name":"Enchanted Armor","rank":2},{"id":4244,"name":"Evasive","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4222,"name":"Veteran''s
+        Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4252,"name":"Legendary
+        Guardian","rank":4},{"id":4123,"name":"Mental Force","rank":3},{"id":4262,"name":"Tenacious","rank":1},{"id":4133,"name":"Arcane
+        Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1}]}]}'
     http_version: 
-  recorded_at: Fri, 13 Dec 2013 20:03:19 GMT
+  recorded_at: Sat, 21 Dec 2013 08:37:18 GMT
+- request:
+    method: get
+    uri: http://prod.api.pvp.net/api/lol/na/v1.2/summoner/23893133/masteries?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Sat, 21 Dec 2013 08:37:15 GMT
+      Server:
+      - Jetty(9.1.0.v20131115)
+      X-Newrelic-App-Data:
+      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksLPR4SRg8JWVkEFD8XSEMRDA9YX1IULVVLb00LAhFEB0oLXUsUGnQgbUgTTQNMVBoHT1ZXAAEGVVhUAB0aV0gTVAJTVwdVUQZcBggPBFdVBxs8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"summonerId":23893133,"pages":[{"id":35512964,"name":"Mastery Page
+        1","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4242,"name":"Swiftness","rank":1},{"id":4213,"name":"Enchanted
+        Armor","rank":2},{"id":4211,"name":"Block","rank":1},{"id":4244,"name":"Evasive","rank":1},{"id":4333,"name":"Vampirism","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4322,"name":"Summoner''s
+        Insight","rank":1},{"id":4323,"name":"Strength of Spirit","rank":1},{"id":4222,"name":"Veteran''s
+        Scars","rank":3},{"id":4252,"name":"Legendary Guardian","rank":4},{"id":4262,"name":"Tenacious","rank":1},{"id":4312,"name":"Fleet
+        of Foot","rank":3},{"id":4313,"name":"Meditation","rank":3},{"id":4232,"name":"Juggernaut","rank":1},{"id":4233,"name":"Hardiness","rank":2}]},{"id":35512965,"name":"Mastery
+        Page 2","current":true,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
+        Weakness","rank":1},{"id":4134,"name":"Executioner","rank":3},{"id":4154,"name":"Arcane
+        Blade","rank":1},{"id":4222,"name":"Veteran''s Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4144,"name":"Dangerous
+        Game","rank":1},{"id":4152,"name":"Devastating Strikes","rank":3},{"id":4123,"name":"Mental
+        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4162,"name":"Havoc","rank":1}]},{"id":35512966,"name":"AP","current":false,"talents":[{"id":4212,"name":"Recovery","rank":2},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
+        Weakness","rank":1},{"id":4134,"name":"Executioner","rank":3},{"id":4154,"name":"Arcane
+        Blade","rank":1},{"id":4222,"name":"Veteran''s Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4144,"name":"Dangerous
+        Game","rank":1},{"id":4152,"name":"Devastating Strikes","rank":3},{"id":4123,"name":"Mental
+        Force","rank":3},{"id":4133,"name":"Arcane Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1},{"id":4143,"name":"Archmage","rank":3},{"id":4162,"name":"Havoc","rank":1}]},{"id":35512967,"name":"Mastery
+        Page 4","current":false,"talents":[{"id":4233,"name":"Hardiness","rank":3},{"id":4211,"name":"Block","rank":2},{"id":4121,"name":"Expose
+        Weakness","rank":1},{"id":4213,"name":"Enchanted Armor","rank":2},{"id":4244,"name":"Evasive","rank":1},{"id":4234,"name":"Resistance","rank":3},{"id":4222,"name":"Veteran''s
+        Scars","rank":3},{"id":4113,"name":"Sorcery","rank":4},{"id":4221,"name":"Unyielding","rank":1},{"id":4252,"name":"Legendary
+        Guardian","rank":4},{"id":4123,"name":"Mental Force","rank":3},{"id":4262,"name":"Tenacious","rank":1},{"id":4133,"name":"Arcane
+        Mastery","rank":1},{"id":4232,"name":"Juggernaut","rank":1}]}]}'
+    http_version: 
+  recorded_at: Sat, 21 Dec 2013 08:37:18 GMT
 recorded_with: VCR 2.8.0

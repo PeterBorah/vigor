@@ -59,7 +59,7 @@ class Vigor
     end
 
     def get_or_fetch_field(field)
-      add_summoner_data(Client.get("/summoner/" + @id.to_s)) unless @fields[field]
+      add_summoner_data(Client.get("/v1.2/summoner/" + @id.to_s)) unless @fields[field]
       @fields[field]
     end
 
