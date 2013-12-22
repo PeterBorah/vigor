@@ -73,6 +73,11 @@ describe Vigor, :vcr do
 
     players = most_recent.fellow_players
     expect(players.length).to eq 9
-    expect(players.first.champion_id).to eq 33
+    expect(players.first.champion_id).to eq 43
+  end
+
+  it "sorts recent games by most recent" do
+    recent_games = Vigor.summoner("idea").recent_games
+    expect(recent_games.each_cons(2).all? { |x, y| x.created_at > y.created_at }).to be true
   end
 end
