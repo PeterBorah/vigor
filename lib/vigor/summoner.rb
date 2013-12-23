@@ -23,7 +23,7 @@ class Vigor
 
     def add_game_data(data)
       @id = data["summonerId"]
-      @fields[:champion_id] = data["championId"]
+      @fields[:champion] = Vigor.champion(data["championId"])
       @fields[:team_id] = data["teamId"]
     end
 

@@ -78,7 +78,7 @@ describe Vigor, :vcr do
 
     players = most_recent.fellow_players
     expect(players.length).to eq 1
-    expect(players.first.champion_id).to eq 17
+    expect(players.first.champion.name).to eq "Teemo"
   end
 
   it "sorts recent games by most recent" do
