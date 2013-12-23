@@ -38,7 +38,7 @@ class Vigor
   end
 
   def self.all_champions
-    @champions ||= Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
+    @@champions ||= Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
   end
 
   def self.free_to_play
