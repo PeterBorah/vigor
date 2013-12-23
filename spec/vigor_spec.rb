@@ -51,6 +51,11 @@ describe Vigor, :vcr do
     expect(zyra.id).to eq 143
   end
 
+  it "can get a champion by id" do
+    zyra = Vigor.champion(143)
+    expect(zyra.name).to eq "Zyra"
+  end
+
   it "can get free-to-play champions" do
     free_champs = Vigor.free_to_play
     expect(free_champs.length).to eq 10
