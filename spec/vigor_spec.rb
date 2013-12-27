@@ -80,4 +80,12 @@ describe Vigor, :vcr do
     recent_games = Vigor.summoner("idea").recent_games
     expect(recent_games.each_cons(2).all? { |x, y| x.created_at > y.created_at }).to be true
   end
+
+  it "can get game data for games with a single player" do
+    recent_games = Vigor.summoner("idea").recent_games
+    custom_game = recent_games[8]
+    expect(custom_game.champion_id).to eq 92
+    expect(custom_game.type).to eq "CUSTOM_GAME"
+    expect(custom_game.fellow_players.empty?).to be true
+  end
 end
