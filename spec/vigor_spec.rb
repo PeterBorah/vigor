@@ -82,7 +82,7 @@ describe Vigor, :vcr do
   end
 
   it "sorts recent games by most recent" do
-    recent_games = Vigor.summoner("idea").recent_games
+    recent_games = Vigor.recent_games(48686086)
     expect(recent_games.each_cons(2).all? { |x, y| x.created_at > y.created_at }).to be true
   end
 end

@@ -44,8 +44,7 @@ class Vigor
     end
 
     def recent_games
-      games = Vigor.recent_games(@id)
-      games.sort { |x, y| y.created_at <=> x.created_at }
+      Vigor.recent_games(@id)
     end
 
     def method_missing(meth)

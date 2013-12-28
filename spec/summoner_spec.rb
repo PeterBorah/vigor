@@ -30,9 +30,9 @@ describe Vigor::Summoner, :vcr do
   end
 
   it "will grab extra information when needed" do
-    player = Vigor.recent_games("23893133").first.fellow_players.first
-    expect(player.name).to eq "DARKNVADR"
-    expect(player.profile_icon_id).to eq 588
+    player = Vigor.recent_games("48686086").first.fellow_players.first
+    expect(player.name).to eq "Chocolatecharm"
+    expect(player.profile_icon_id).to eq 12
     expect(player.team_id).to eq 100
   end
 end

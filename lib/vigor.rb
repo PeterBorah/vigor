@@ -54,6 +54,7 @@ class Vigor
   end
 
   def self.recent_games(id)
-    Client.get("/v1.2/game/by-summoner/#{id.to_s}/recent")["games"].map {|game| Game.new(game)}
+    games = Client.get("/v1.2/game/by-summoner/#{id.to_s}/recent")["games"].map {|game| Game.new(game)}
+    games.sort { |x, y| y.created_at <=> x.created_at }
   end
 end
