@@ -23,7 +23,8 @@ class Vigor
 
     def add_game_data(data)
       @id = data["summonerId"]
-      @fields[:champion] = Vigor.champion(data["championId"])
+      @fields[:champion_id] = data["championId"]
+      @fields[:champion] = champion(@fields[:champion_id])
       @fields[:team_id] = data["teamId"]
     end
 
@@ -47,6 +48,11 @@ class Vigor
       Vigor.recent_games(@id)
     end
 
+    def respond_to_missing?(meth, *)
+      (Available_fields + @fields.keys).include?(meth) || super
+    end
+
+    private
     def method_missing(meth)
       if Available_fields.include? meth
         return get_or_fetch_field(meth)
@@ -62,8 +68,8 @@ class Vigor
       @fields[field]
     end
 
-    def respond_to_missing?(meth, *)
-      (Available_fields + @fields.keys).include?(meth) || super
+    def champion(id)
+      Vigor.champion(id)
     end
   end
 end

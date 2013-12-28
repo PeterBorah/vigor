@@ -1,9 +1,9 @@
 class Vigor
   class Game
-    attr_accessor :champion, :created_at, :fellow_players, :id, :mode, :type, :level, :map, :spells, :stats, :sub_type, :team_id
+    attr_accessor :champion_id, :created_at, :fellow_players, :id, :mode, :type, :level, :map, :spells, :stats, :sub_type, :team_id
 
     def initialize(data)
-      @champion = Vigor.champion(data["championId"])
+      @champion_id = data["championId"]
       @created_at = DateTime.strptime(data["createDate"].to_s,'%s')
       @fellow_players = data["fellowPlayers"].map { |player| Summoner.new(player, :game) }
       @id = data["gameId"]
@@ -16,6 +16,10 @@ class Vigor
       @stats = data["statistics"] # Already a reasonable and simple list of hashes
       @sub_type = data["subType"]
       @team_id = data["teamId"]
+    end
+
+    def champion
+      Vigor.champion(@champion_id)
     end
 
     def invalid?
