@@ -72,6 +72,8 @@ describe Vigor, :vcr do
     expect(most_recent).to_not be_invalid
     expect(most_recent.map).to eq 12
     expect(most_recent.spells).to eq [4, 21]
+    expect(most_recent.created_at.year).to eq 2013
+    expect(most_recent.created_at.day).to eq 20
 
     true_damage_taken = most_recent.stats.find {|stat| stat["id"] == 104 }
     expect(true_damage_taken["value"]).to eq 136

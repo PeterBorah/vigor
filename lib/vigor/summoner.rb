@@ -18,7 +18,7 @@ class Vigor
       @fields[:name] = data["name"]
       @fields[:profile_icon_id] = data["profileIconId"]
       @fields[:level] = data["summonerLevel"]
-      @fields[:revision_date] = DateTime.strptime(data["revisionDate"].to_s,'%s')
+      @fields[:revision_date] = DateTime.strptime((data["revisionDate"]/1000).to_s,'%s')
     end
 
     def add_game_data(data)

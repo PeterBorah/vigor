@@ -4,7 +4,7 @@ class Vigor
 
     def initialize(data)
       @champion_id = data["championId"]
-      @created_at = DateTime.strptime(data["createDate"].to_s,'%s')
+      @created_at = DateTime.strptime((data["createDate"]/1000).to_s,'%s')
       @fellow_players = Array(data["fellowPlayers"]).map { |player| Summoner.new(player, :game) }
       @id = data["gameId"]
       @mode = data["gameMode"]
