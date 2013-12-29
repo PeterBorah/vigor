@@ -36,6 +36,10 @@ class Vigor
       Vigor.rune_pages(@id)
     end
 
+    def teams
+      Vigor.teams(@id)
+    end
+
     def current_mastery_page
       mastery_pages.find {|page| page.current? }
     end
