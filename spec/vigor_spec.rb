@@ -51,6 +51,11 @@ describe Vigor, :vcr do
     expect(zyra.id).to eq 143
   end
 
+  it "can get a champion by id" do
+    zyra = Vigor.champion(143)
+    expect(zyra.name).to eq "Zyra"
+  end
+
   it "can get free-to-play champions" do
     free_champs = Vigor.free_to_play
     expect(free_champs.length).to eq 10
@@ -74,10 +79,11 @@ describe Vigor, :vcr do
     players = most_recent.fellow_players
     expect(players.length).to eq 1
     expect(players.first.champion_id).to eq 17
+    expect(players.first.champion.name).to eq "Teemo"
   end
 
   it "sorts recent games by most recent" do
-    recent_games = Vigor.summoner("idea").recent_games
+    recent_games = Vigor.recent_games(48686086)
     expect(recent_games.each_cons(2).all? { |x, y| x.created_at > y.created_at }).to be true
   end
 

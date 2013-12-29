@@ -38,18 +38,23 @@ class Vigor
   end
 
   def self.all_champions
-    Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
+    @@champions ||= Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
   end
 
   def self.free_to_play
     Client.get("/v1.1/champion/", query: {"freeToPlay" => true})["champions"].map {|champ| Champion.new(champ)}
   end
 
-  def self.champion(name)
-    self.all_champions.find {|champ| champ.name == name}
+  def self.champion(lookup_value)
+    if lookup_value.is_a? String
+      self.all_champions.find {|champ| champ.name == lookup_value}
+    else
+      self.all_champions.find {|champ| champ.id == lookup_value}
+    end
   end
 
   def self.recent_games(id)
-    Client.get("/v1.2/game/by-summoner/#{id.to_s}/recent")["games"].map {|game| Game.new(game)}
+    games = Client.get("/v1.2/game/by-summoner/#{id.to_s}/recent")["games"].map {|game| Game.new(game)}
+    games.sort { |x, y| y.created_at <=> x.created_at }
   end
 end

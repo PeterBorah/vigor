@@ -18,6 +18,10 @@ class Vigor
       @team_id = data["teamId"]
     end
 
+    def champion
+      Vigor.champion(@champion_id)
+    end
+
     def invalid?
       @invalid
     end
