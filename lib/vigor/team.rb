@@ -1,7 +1,7 @@
 class Vigor
   class Team
     attr_accessor :create_date, :full_id, :last_game_date, :last_joined_ranked_team_queue_date, :match_history,
-                  :message_of_day, :modify_date, :name, :members, :owner_id, :status, :tag, :rift_stats, :treeline_stats, :last_join_dates
+                  :modify_date, :name, :members, :owner_id, :status, :tag, :rift_stats, :treeline_stats, :last_join_dates
 
     def initialize(data)
       @create_date = DateTime.strptime((data["createDate"]/1000).to_s, '%s')
@@ -9,7 +9,6 @@ class Vigor
       @last_game_date = DateTime.strptime((data["lastGameDate"]/1000).to_s, '%s') if data.include?("lastGameDate")
       @last_joined_ranked_team_queue_date = DateTime.strptime((data["lastJoinedRankedTeamQueueDate"]/1000).to_s, '%s') # wtf rename this
       @match_history = data["matchHistory"].map { |match| TeamGame.new(match) } if data.include?("matchHistory")
-      @message_of_day = MessageOfDay.new(data["messageOfDay"]) if data.include?("messageOfDay")
       @modify_date = DateTime.strptime((data["modifyDate"]/1000).to_s, '%s')
       @name = data["name"]
       @members = data["roster"]["memberList"].map { |member| Member.new(member) }
@@ -19,18 +18,6 @@ class Vigor
       @rift_stats = TeamStat.new(data["teamStatSummary"]["teamStatDetails"].find { |stats| stats["teamStatType"] == "RANKED_TEAM_5x5" })
       @treeline_stats = TeamStat.new(data["teamStatSummary"]["teamStatDetails"].find { |stats| stats["teamStatType"] == "RANKED_TEAM_3x3" })
       @last_join_dates = [data["lastJoinDate"], data["secondLastJoinDate"], data["thirdLastJoinDate"]]
-    end
-
-  end
-
-  # don't think this is actually in use by Riot yet, but it's in the documentation
-  class MessageOfDay
-    attr_accessor :create_date, :message, :version
-
-    def initialize(data)
-      @create_date = DateTime.strptime((data["createDate"]/1000).to_s, '%s')
-      @message = data["message"]
-      @version = data["version"]
     end
 
   end
