@@ -10,6 +10,8 @@ class Vigor
         add_summoner_data(data)
       when :game
         add_game_data(data)
+      when :team
+        add_team_data(data)
       end
     end
 
@@ -26,6 +28,13 @@ class Vigor
       @fields[:champion_id] = data["championId"]
       @fields[:champion] = champion(@fields[:champion_id])
       @fields[:team_id] = data["teamId"]
+    end
+
+    def add_team_data(data)
+      @id = data["playerId"]
+      @fields[:invite_date] = DateTime.strptime((data["inviteDate"]/1000).to_s, "%s")
+      @fields[:join_date] = DateTime.strptime((data["joinDate"]/1000).to_s, "%s")
+      @fields[:status] = data["status"]
     end
 
     def mastery_pages

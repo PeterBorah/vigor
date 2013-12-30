@@ -36,7 +36,7 @@ describe Vigor::Team, :vcr do
     member = @teams[2].members[1]
     expect(member.invite_date.to_s).to eq "2013-12-05T22:25:04+00:00"
     expect(member.join_date.to_s).to eq "2013-12-06T06:55:21+00:00"
-    expect(member.player_id).to eq 43083658
+    expect(member.id).to eq 43083658
     expect(member.status).to eq "MEMBER"
   end
 

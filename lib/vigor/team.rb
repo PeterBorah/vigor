@@ -11,7 +11,7 @@ class Vigor
       @match_history = data["matchHistory"].map { |match| TeamGame.new(match) } if data.include?("matchHistory")
       @modify_date = DateTime.strptime((data["modifyDate"]/1000).to_s, '%s')
       @name = data["name"]
-      @members = data["roster"]["memberList"].map { |member| Member.new(member) }
+      @members = data["roster"]["memberList"].map { |member| Summoner.new(member, :team) }
       @owner_id = data["roster"]["ownerId"]
       @status = data["status"]
       @tag = data["tag"]
@@ -48,23 +48,11 @@ class Vigor
 
   end
 
-  class Member
-    attr_accessor :invite_date, :join_date, :player_id, :status
-
-    def initialize(data)
-      @invite_date = DateTime.strptime((data["inviteDate"]/1000).to_s, "%s")
-      @join_date = DateTime.strptime((data["joinDate"]/1000).to_s, "%s")
-      @player_id = data["playerId"]
-      @status = data["status"]
-    end
-
-  end
-
   class TeamStat
-    attr_accessor :full_id, :losses, :average_games_played, :wins
+    attr_accessor :id, :losses, :average_games_played, :wins
 
     def initialize(data)
-      @full_id = data["fullId"]
+      @id = data["fullId"]
       @losses = data["losses"]
       @average_games_played = data["averageGamesPlayed"] # this seemingly never returns anything but zero
       @wins = data["wins"]
