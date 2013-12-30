@@ -17,7 +17,7 @@ class Vigor
       @tag = data["tag"]
       @rift_stats = TeamStat.new(data["teamStatSummary"]["teamStatDetails"].find { |stats| stats["teamStatType"] == "RANKED_TEAM_5x5" })
       @treeline_stats = TeamStat.new(data["teamStatSummary"]["teamStatDetails"].find { |stats| stats["teamStatType"] == "RANKED_TEAM_3x3" })
-      @last_join_dates = [data["lastJoinDate"], data["secondLastJoinDate"], data["thirdLastJoinDate"]]
+      @last_join_dates = [data["lastJoinDate"], data["secondLastJoinDate"], data["thirdLastJoinDate"]].map { |date| DateTime.strptime((date/1000).to_s, '%s') }
     end
 
   end
@@ -66,7 +66,7 @@ class Vigor
     def initialize(data)
       @full_id = data["fullId"]
       @losses = data["losses"]
-      @average_games_played = data["averageGamesPlayed"]
+      @average_games_played = data["averageGamesPlayed"] # this seemingly never returns anything but zero
       @wins = data["wins"]
     end
 
