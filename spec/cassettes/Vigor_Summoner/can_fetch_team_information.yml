@@ -1,0 +1,247 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://prod.api.pvp.net/api/lol/na/v1.2/summoner/by-name/idea?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 30 Dec 2013 14:27:10 GMT
+      Server:
+      - Jetty(9.1.0.v20131115)
+      X-Newrelic-App-Data:
+      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksLPR4SRg8JWVkEFD8XUUlJDwNaVGtJH19XXgcbQ0p3J2xLGhQEHANJCU8BUQFVUw8AVF9PFQIcRgMBAwUFVVcCAAYDVAVSCVIaPw==
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":31640242,"name":"Idea","profileIconId":540,"summonerLevel":30,"revisionDate":1388368294000}'
+    http_version: 
+  recorded_at: Mon, 30 Dec 2013 14:27:10 GMT
+- request:
+    method: get
+    uri: http://prod.api.pvp.net/api/lol/na/v2.2/team/by-summoner/31640242?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Mon, 30 Dec 2013 14:27:10 GMT
+      Server:
+      - Jetty(9.1.0.v20131115)
+      X-Newrelic-App-Data:
+      - PxQFWFFSDwQTVVZSBwAGVkYdFGQHBDcQUQxLA1tMXV1dORYzVBBGBxdCdhUSEVFRRRAEPhhQRw84HlpcDjpMDFE+FxQKFgZuHBFcAFw9HAAdG0QUCw5XXVUWPU1ERFoLC19TQSsCQU4ATAhOCBYEBgBTC1EGUQVOSQdq
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "[ {\n  \"fullId\" : \"TEAM-bf6bb970-f4cc-11e2-946c-782bcb4d1861\",\n
+        \ \"name\" : \"BootyWhacknBootyWhackers\",\n  \"tag\" : \"Whackn\",\n  \"status\"
+        : \"RANKED\",\n  \"teamStatSummary\" : {\n    \"fullId\" : \"TEAM-bf6bb970-f4cc-11e2-946c-782bcb4d1861\",\n
+        \   \"teamStatDetails\" : [ {\n      \"fullId\" : \"TEAM-bf6bb970-f4cc-11e2-946c-782bcb4d1861\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_5x5\",\n      \"wins\" : 0,\n      \"losses\"
+        : 0,\n      \"averageGamesPlayed\" : 0\n    }, {\n      \"fullId\" : \"TEAM-bf6bb970-f4cc-11e2-946c-782bcb4d1861\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_3x3\",\n      \"wins\" : 28,\n      \"losses\"
+        : 21,\n      \"averageGamesPlayed\" : 0\n    } ]\n  },\n  \"roster\" : {\n
+        \   \"ownerId\" : 19894705,\n    \"memberList\" : [ {\n      \"playerId\"
+        : 19894705,\n      \"joinDate\" : 1374717099000,\n      \"inviteDate\" : 1374717099000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 31640242,\n
+        \     \"joinDate\" : 1374718379000,\n      \"inviteDate\" : 1374717178000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 22373299,\n
+        \     \"joinDate\" : 1374717188000,\n      \"inviteDate\" : 1374717184000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 19362553,\n
+        \     \"joinDate\" : 1374719461000,\n      \"inviteDate\" : 1374717211000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 23973640,\n
+        \     \"joinDate\" : 1376742945000,\n      \"inviteDate\" : 1376526988000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 29290874,\n
+        \     \"joinDate\" : 1377413310000,\n      \"inviteDate\" : 1377413307000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 181,\n      \"joinDate\"
+        : 1383964912000,\n      \"inviteDate\" : 1383964899000,\n      \"status\"
+        : \"MEMBER\"\n    } ]\n  },\n  \"matchHistory\" : [ {\n    \"kills\" : 10,\n
+        \   \"deaths\" : 16,\n    \"opposingTeamKills\" : 16,\n    \"assists\" : 7,\n
+        \   \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"Sams Sleeping
+        Deth\",\n    \"win\" : false,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n
+        \   \"gameId\" : 1150721557\n  }, {\n    \"kills\" : 27,\n    \"deaths\" :
+        17,\n    \"opposingTeamKills\" : 17,\n    \"assists\" : 40,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"Play For Gold\",\n    \"win\"
+        : true,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\" : 1150566342\n
+        \ }, {\n    \"kills\" : 7,\n    \"deaths\" : 24,\n    \"opposingTeamKills\"
+        : 24,\n    \"assists\" : 9,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"Seatribe Esports\",\n    \"win\" : false,\n    \"invalid\" : false,\n
+        \   \"mapId\" : 10,\n    \"gameId\" : 1150535075\n  }, {\n    \"kills\" :
+        18,\n    \"deaths\" : 10,\n    \"opposingTeamKills\" : 10,\n    \"assists\"
+        : 29,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"XCVGFDBVGFCBVGCBVF\",\n
+        \   \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\"
+        : 1144792859\n  }, {\n    \"kills\" : 13,\n    \"deaths\" : 6,\n    \"opposingTeamKills\"
+        : 6,\n    \"assists\" : 21,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"immawhaleoauroauroaur\",\n    \"win\" : true,\n    \"invalid\" : false,\n
+        \   \"mapId\" : 10,\n    \"gameId\" : 1109716737\n  }, {\n    \"kills\" :
+        9,\n    \"deaths\" : 22,\n    \"opposingTeamKills\" : 22,\n    \"assists\"
+        : 15,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"The Cactus
+        Knights\",\n    \"win\" : false,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1063040905\n  }, {\n    \"kills\" : 9,\n    \"deaths\"
+        : 16,\n    \"opposingTeamKills\" : 16,\n    \"assists\" : 12,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"Thirsty For Threes\",\n    \"win\"
+        : false,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\" :
+        1062989915\n  }, {\n    \"kills\" : 3,\n    \"deaths\" : 12,\n    \"opposingTeamKills\"
+        : 12,\n    \"assists\" : 5,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"1st ur altar then ur GF\",\n    \"win\" : false,\n    \"invalid\" : false,\n
+        \   \"mapId\" : 10,\n    \"gameId\" : 1062953068\n  }, {\n    \"kills\" :
+        13,\n    \"deaths\" : 22,\n    \"opposingTeamKills\" : 21,\n    \"assists\"
+        : 24,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"HOLLA
+        AT YA BOI\",\n    \"win\" : false,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1062876022\n  }, {\n    \"kills\" : 19,\n    \"deaths\"
+        : 12,\n    \"opposingTeamKills\" : 12,\n    \"assists\" : 31,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"Scared Cowards\",\n    \"win\"
+        : true,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\" : 1059655297\n
+        \ }, {\n    \"kills\" : 7,\n    \"deaths\" : 19,\n    \"opposingTeamKills\"
+        : 19,\n    \"assists\" : 9,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"Obama Gaming\",\n    \"win\" : false,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1053952450\n  }, {\n    \"kills\" : 18,\n    \"deaths\"
+        : 13,\n    \"opposingTeamKills\" : 13,\n    \"assists\" : 32,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"We Qued for Dominion\",\n    \"win\"
+        : true,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\" : 1053878135\n
+        \ }, {\n    \"kills\" : 16,\n    \"deaths\" : 4,\n    \"opposingTeamKills\"
+        : 4,\n    \"assists\" : 29,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"Diet Dr Pepper\",\n    \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1047118812\n  }, {\n    \"kills\" : 6,\n    \"deaths\"
+        : 19,\n    \"opposingTeamKills\" : 19,\n    \"assists\" : 10,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"GetALoseJob\",\n    \"win\" :
+        false,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\" : 1047097198\n
+        \ }, {\n    \"kills\" : 21,\n    \"deaths\" : 7,\n    \"opposingTeamKills\"
+        : 7,\n    \"assists\" : 35,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"TriGaming\",\n    \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1045636802\n  }, {\n    \"kills\" : 18,\n    \"deaths\"
+        : 21,\n    \"opposingTeamKills\" : 21,\n    \"assists\" : 33,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"NinjaTurtleAQ\",\n    \"win\"
+        : false,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\" :
+        1045609772\n  }, {\n    \"kills\" : 14,\n    \"deaths\" : 1,\n    \"opposingTeamKills\"
+        : 1,\n    \"assists\" : 25,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"3s life\",\n    \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1043751209\n  }, {\n    \"kills\" : 6,\n    \"deaths\"
+        : 10,\n    \"opposingTeamKills\" : 10,\n    \"assists\" : 11,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"TeachrCALLSMEZionSpartan\",\n
+        \   \"win\" : false,\n    \"invalid\" : false,\n    \"mapId\" : 10,\n    \"gameId\"
+        : 1042014588\n  }, {\n    \"kills\" : 10,\n    \"deaths\" : 3,\n    \"opposingTeamKills\"
+        : 3,\n    \"assists\" : 15,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"TeachrCALLSMEZionSpartan\",\n    \"win\" : true,\n    \"invalid\" : false,\n
+        \   \"mapId\" : 10,\n    \"gameId\" : 1042001754\n  }, {\n    \"kills\" :
+        21,\n    \"deaths\" : 8,\n    \"opposingTeamKills\" : 8,\n    \"assists\"
+        : 21,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"Rootwalla
+        Syndicate\",\n    \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\"
+        : 10,\n    \"gameId\" : 1039564437\n  } ],\n  \"createDate\" : 1374717099000,\n
+        \ \"modifyDate\" : 1386705134000,\n  \"lastJoinDate\" : 1383964912000,\n  \"secondLastJoinDate\"
+        : 1377976446000,\n  \"thirdLastJoinDate\" : 1377454125000,\n  \"lastGameDate\"
+        : 1383971785000,\n  \"lastJoinedRankedTeamQueueDate\" : 1383969644000\n},
+        {\n  \"fullId\" : \"TEAM-d5d33f70-3456-11e3-bd7c-782bcb4d0bb2\",\n  \"name\"
+        : \"StuffThingsWhatever\",\n  \"tag\" : \"StThWh\",\n  \"status\" : \"PROVISIONAL\",\n
+        \ \"teamStatSummary\" : {\n    \"fullId\" : \"TEAM-d5d33f70-3456-11e3-bd7c-782bcb4d0bb2\",\n
+        \   \"teamStatDetails\" : [ {\n      \"fullId\" : \"TEAM-d5d33f70-3456-11e3-bd7c-782bcb4d0bb2\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_5x5\",\n      \"wins\" : 1,\n      \"losses\"
+        : 0,\n      \"averageGamesPlayed\" : 0\n    }, {\n      \"fullId\" : \"TEAM-d5d33f70-3456-11e3-bd7c-782bcb4d0bb2\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_3x3\",\n      \"wins\" : 0,\n      \"losses\"
+        : 0,\n      \"averageGamesPlayed\" : 0\n    } ]\n  },\n  \"roster\" : {\n
+        \   \"ownerId\" : 21092911,\n    \"memberList\" : [ {\n      \"playerId\"
+        : 21092911,\n      \"joinDate\" : 1381703331000,\n      \"inviteDate\" : 1381703331000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 31640242,\n
+        \     \"joinDate\" : 1381703378000,\n      \"inviteDate\" : 1381703362000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 22876966,\n
+        \     \"joinDate\" : 1381703377000,\n      \"inviteDate\" : 1381703365000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 20943723,\n
+        \     \"joinDate\" : 1381703374000,\n      \"inviteDate\" : 1381703366000,\n
+        \     \"status\" : \"MEMBER\"\n    } ]\n  },\n  \"matchHistory\" : [ {\n    \"kills\"
+        : 54,\n    \"deaths\" : 40,\n    \"opposingTeamKills\" : 40,\n    \"assists\"
+        : 107,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"the
+        beaztsz have fun\",\n    \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\"
+        : 1,\n    \"gameId\" : 1117868856\n  } ],\n  \"createDate\" : 1381703331000,\n
+        \ \"modifyDate\" : 1383190490000,\n  \"lastJoinDate\" : 1381703446000,\n  \"secondLastJoinDate\"
+        : 1381703378000,\n  \"thirdLastJoinDate\" : 1381703377000,\n  \"lastGameDate\"
+        : 1381706833000,\n  \"lastJoinedRankedTeamQueueDate\" : 1381703566000\n},
+        {\n  \"fullId\" : \"TEAM-06063a20-5dfc-11e3-8ece-782bcb4d1861\",\n  \"name\"
+        : \"The Karma Police\",\n  \"tag\" : \"CKPD\",\n  \"status\" : \"PROVISIONAL\",\n
+        \ \"teamStatSummary\" : {\n    \"fullId\" : \"TEAM-06063a20-5dfc-11e3-8ece-782bcb4d1861\",\n
+        \   \"teamStatDetails\" : [ {\n      \"fullId\" : \"TEAM-06063a20-5dfc-11e3-8ece-782bcb4d1861\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_3x3\",\n      \"wins\" : 0,\n      \"losses\"
+        : 0,\n      \"averageGamesPlayed\" : 0\n    }, {\n      \"fullId\" : \"TEAM-06063a20-5dfc-11e3-8ece-782bcb4d1861\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_5x5\",\n      \"wins\" : 1,\n      \"losses\"
+        : 2,\n      \"averageGamesPlayed\" : 0\n    } ]\n  },\n  \"roster\" : {\n
+        \   \"ownerId\" : 40790714,\n    \"memberList\" : [ {\n      \"playerId\"
+        : 40790714,\n      \"joinDate\" : 1386282276000,\n      \"inviteDate\" : 1386282276000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 43083658,\n
+        \     \"joinDate\" : 1386312921000,\n      \"inviteDate\" : 1386282304000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 42152555,\n
+        \     \"joinDate\" : 1386300005000,\n      \"inviteDate\" : 1386282310000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 31640242,\n
+        \     \"joinDate\" : 1386282701000,\n      \"inviteDate\" : 1386282312000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 24198669,\n
+        \     \"joinDate\" : 1386305954000,\n      \"inviteDate\" : 1386282317000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 36700874,\n
+        \     \"joinDate\" : 1386308298000,\n      \"inviteDate\" : 1386282320000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 21396235,\n
+        \     \"joinDate\" : 1386356176000,\n      \"inviteDate\" : 1386282326000,\n
+        \     \"status\" : \"MEMBER\"\n    }, {\n      \"playerId\" : 24198424,\n
+        \     \"joinDate\" : 1386822621000,\n      \"inviteDate\" : 1386470685000,\n
+        \     \"status\" : \"MEMBER\"\n    } ]\n  },\n  \"matchHistory\" : [ {\n    \"kills\"
+        : 9,\n    \"deaths\" : 21,\n    \"opposingTeamKills\" : 21,\n    \"assists\"
+        : 5,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\" : \"WO CA
+        NY\",\n    \"win\" : false,\n    \"invalid\" : false,\n    \"mapId\" : 1,\n
+        \   \"gameId\" : 1191217681\n  }, {\n    \"kills\" : 9,\n    \"deaths\" :
+        25,\n    \"opposingTeamKills\" : 25,\n    \"assists\" : 14,\n    \"gameMode\"
+        : \"CLASSIC\",\n    \"opposingTeamName\" : \"TonyShaoYe\",\n    \"win\" :
+        false,\n    \"invalid\" : false,\n    \"mapId\" : 1,\n    \"gameId\" : 1191164018\n
+        \ }, {\n    \"kills\" : 44,\n    \"deaths\" : 31,\n    \"opposingTeamKills\"
+        : 31,\n    \"assists\" : 83,\n    \"gameMode\" : \"CLASSIC\",\n    \"opposingTeamName\"
+        : \"GoBallsDeepBB\",\n    \"win\" : true,\n    \"invalid\" : false,\n    \"mapId\"
+        : 1,\n    \"gameId\" : 1184552933\n  } ],\n  \"createDate\" : 1386282276000,\n
+        \ \"modifyDate\" : 1386828051000,\n  \"lastJoinDate\" : 1386822621000,\n  \"secondLastJoinDate\"
+        : 1386356176000,\n  \"thirdLastJoinDate\" : 1386312921000,\n  \"lastGameDate\"
+        : 1386828051000,\n  \"lastJoinedRankedTeamQueueDate\" : 1386825337000\n},
+        {\n  \"fullId\" : \"TEAM-77ccab30-7085-11e3-aa3d-782bcb4d1861\",\n  \"name\"
+        : \"VigorTest\",\n  \"tag\" : \"VIGTST\",\n  \"status\" : \"PROVISIONAL\",\n
+        \ \"teamStatSummary\" : {\n    \"fullId\" : \"TEAM-77ccab30-7085-11e3-aa3d-782bcb4d1861\",\n
+        \   \"teamStatDetails\" : [ {\n      \"fullId\" : \"TEAM-77ccab30-7085-11e3-aa3d-782bcb4d1861\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_3x3\",\n      \"wins\" : 0,\n      \"losses\"
+        : 0,\n      \"averageGamesPlayed\" : 0\n    }, {\n      \"fullId\" : \"TEAM-77ccab30-7085-11e3-aa3d-782bcb4d1861\",\n
+        \     \"teamStatType\" : \"RANKED_TEAM_5x5\",\n      \"wins\" : 0,\n      \"losses\"
+        : 0,\n      \"averageGamesPlayed\" : 0\n    } ]\n  },\n  \"roster\" : {\n
+        \   \"ownerId\" : 31640242,\n    \"memberList\" : [ {\n      \"playerId\"
+        : 31640242,\n      \"joinDate\" : 1388320429000,\n      \"inviteDate\" : 1388320429000,\n
+        \     \"status\" : \"MEMBER\"\n    } ]\n  },\n  \"createDate\" : 1388320429000,\n
+        \ \"modifyDate\" : 1388320429000,\n  \"lastJoinDate\" : 1388320429000,\n  \"secondLastJoinDate\"
+        : 1388320429000,\n  \"thirdLastJoinDate\" : 1388320429000,\n  \"lastJoinedRankedTeamQueueDate\"
+        : 524495953302\n} ]"
+    http_version: 
+  recorded_at: Mon, 30 Dec 2013 14:27:10 GMT
+recorded_with: VCR 2.8.0

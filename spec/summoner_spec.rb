@@ -35,4 +35,18 @@ describe Vigor::Summoner, :vcr do
     expect(player.profile_icon_id).to eq 12
     expect(player.team_id).to eq 100
   end
+
+  it "can fetch team information" do
+    summoner = Vigor.summoner("idea")
+    teams = summoner.teams
+
+    expect(teams.size).to eq 4
+
+    karma = teams[2]
+    expect(karma.name).to eq "The Karma Police"
+    expect(karma.members.size).to eq 8
+    expect(karma.status).to eq "PROVISIONAL"
+    expect(karma.tag).to eq "CKPD"
+    expect(karma.owner_id).to eq 40790714
+  end
 end
