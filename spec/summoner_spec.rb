@@ -47,6 +47,6 @@ describe Vigor::Summoner, :vcr do
     expect(karma.members.size).to eq 8
     expect(karma.status).to eq "PROVISIONAL"
     expect(karma.tag).to eq "CKPD"
-    expect(karma.owner_id).to eq 40790714
+    expect(karma.owner.id).to eq 40790714
   end
 end
