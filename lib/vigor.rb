@@ -38,8 +38,12 @@ class Vigor
     Client.get("/v1.2/summoner/#{id.to_s}/runes")["pages"].map {|page| RunePage.new(page)}
   end
 
-  def self.all_champions
-    @@champions ||= Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
+  def self.all_champions(refresh = false)
+    if refresh
+      @@champions = Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
+    else
+      @@champions ||= Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
+    end
   end
 
   def self.free_to_play
