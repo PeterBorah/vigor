@@ -33,14 +33,8 @@ class Vigor
     end
 
     def summoners(ids)
-      if ids.is_a? String
-        response = Client.get("/v1.2/summoner/#{URI.encode(ids)}/name")
-      elsif ids.is_a? Array
-        response = Client.get("/v1.2/summoner/#{URI.encode(ids.join(", "))}/name")
-      else
-        return []
-      end
-      return response["summoners"].map { |summoner| Summoner.new(summoner, :name_and_id) }
+      response = Client.get("/v1.2/summoner/#{URI.encode(ids.join(", "))}/name")
+      response["summoners"].map { |summoner| Summoner.new(summoner, :name_and_id) }
     end
 
     def mastery_pages(id)

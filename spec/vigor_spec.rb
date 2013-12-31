@@ -19,6 +19,11 @@ describe Vigor, :vcr do
     expect(summoner.level).to eq 30
   end
 
+  it "can get multiple summoners by id" do
+    summoners = Vigor.summoners([31640242, 23893133])
+    expect(summoners.map(&:name)).to eq ["Idea", "Semiel"]
+  end
+
   it "can get summoners whose names have whitespace" do
     summoner = Vigor.summoner("Best Riven NA")
     expect(summoner.id).to eq 32400810
