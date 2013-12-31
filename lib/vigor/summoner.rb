@@ -12,6 +12,9 @@ class Vigor
         add_game_data(data)
       when :team
         add_team_data(data)
+      when :name_and_id
+        @id = data["id"]
+        @fields[:name] = data["name"]
       when :id_only
         @id = data
       end

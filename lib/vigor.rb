@@ -1,3 +1,5 @@
+require 'uri/common'
+
 require_relative 'vigor/summoner'
 require_relative 'vigor/client'
 require_relative 'vigor/page'
@@ -28,6 +30,17 @@ class Vigor
     else
       return Summoner.new(Client.get("/v1.2/summoner/" + lookup_value.to_s))
     end
+  end
+
+  def self.summoners(ids)
+    if ids.is_a? String
+      response = Client.get("/v1.2/summoner/#{URI.encode(ids)}/name")
+    elsif ids.is_a? Array
+      response = Client.get("/v1.2/summoner/#{URI.encode(ids.join(", "))}/name")
+    else
+      return []
+    end
+    return response["summoners"].map { |summoner| Summoner.new(summoner, :name_and_id) }
   end
 
   def self.mastery_pages(id)
