@@ -11,6 +11,7 @@ require_relative 'vigor/error'
 require_relative 'vigor/champion'
 require_relative 'vigor/game'
 require_relative 'vigor/team.rb'
+require_relative 'vigor/stats.rb'
 
 class Vigor
   class << self
@@ -68,6 +69,16 @@ class Vigor
 
     def teams(id)
       Client.get("/v2.2/team/by-summoner/#{id.to_s}").map {|team| Team.new(team)}
+    end
+
+    # returns summary stats for each queue type
+    def stats(id, season = nil)
+      Stats.new(Client.get("/v1.2/stats/by-summoner/#{id}/summary", query: {"season" => season.to_s}))
+    end
+
+    # returns detailed ranked stats for each champion (combines rift and treeline stats)
+    def champion_stats(id, season = nil)
+      Client.get("/v1.2/stats/by-summoner/#{id}/ranked", query: {"season" => season.to_s})
     end
   end
 end

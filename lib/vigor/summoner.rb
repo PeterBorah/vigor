@@ -54,6 +54,10 @@ class Vigor
       Vigor.teams(@id)
     end
 
+    def stats(season = nil)
+      Vigor.stats(@id, season)
+    end
+
     def current_mastery_page
       mastery_pages.find {|page| page.current? }
     end
