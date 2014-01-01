@@ -10,8 +10,9 @@ require_relative 'vigor/rune'
 require_relative 'vigor/error'
 require_relative 'vigor/champion'
 require_relative 'vigor/game'
-require_relative 'vigor/team.rb'
-require_relative 'vigor/stats.rb'
+require_relative 'vigor/team'
+require_relative 'vigor/stats'
+require_relative 'vigor/champion_stats'
 
 class Vigor
   class << self
@@ -78,7 +79,7 @@ class Vigor
 
     # returns detailed ranked stats for each champion (combines rift and treeline stats)
     def champion_stats(id, season = nil)
-      Client.get("/v1.2/stats/by-summoner/#{id}/ranked", query: {"season" => season.to_s})
+      ChampionStats.new(Client.get("/v1.2/stats/by-summoner/#{id}/ranked", query: {"season" => season.to_s}))
     end
   end
 end

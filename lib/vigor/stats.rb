@@ -1,6 +1,6 @@
 class Vigor
   class Stats
-    attr_reader :sets
+    attr_accessor :sets
 
     def initialize(data)
       @sets = data['playerStatSummaries'].map { |set| StatsSet.new(set) }
@@ -9,11 +9,11 @@ class Vigor
   end
 
   class StatsSet
-    attr_reader :losses, :modify_date, :wins, :type, :stats
+    attr_accessor :losses, :modify_date, :wins, :type, :stats
 
     def initialize(data)
       @losses = data['losses']
-      @modify_date = data['modifyDate']
+      @modify_date = DateTime.strptime((data['modifyDate']/1000).to_s, '%s')
       @wins = data['wins']
       @type = data['playerStatSummaryType']
       @stats = data['aggregatedStats']
