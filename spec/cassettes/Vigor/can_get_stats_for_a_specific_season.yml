@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://prod.api.pvp.net/api/lol/na/v1.2/stats/by-summoner/31640242/summary?api_key=<API_KEY>&season=SEASON3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, PUT
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 02 Jan 2014 06:47:20 GMT
+      Server:
+      - Jetty(9.1.0.v20131115)
+      X-Newrelic-App-Data:
+      - PxQFWFFSDwQTVVdUBAgAVkYdFGQHBDcQUQxLA1tMXV1dORYzVBJHNQFUZAQUFVFQVThOA0dYa0kIXlpvTR0RB1cLVwxFZBtEAksLPR4SRwMQRWtOBBoVQEUJDA1ZVEU6S0pFRg8LDAxVEHEGRWQbQUYIVABDGBNKI3NjSERPCB0ASFFMBwECVFUGBwVbSk5THEAMA1tbBwAFBAlWBwMGAwUAFTw=
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"summonerId":31640242,"playerStatSummaries":[{"playerStatSummaryType":"AramUnranked5x5","wins":298,"losses":0,"modifyDate":1388607209000,"aggregatedStats":{"totalChampionKills":5830,"totalTurretsKilled":281,"totalAssists":11977}},{"playerStatSummaryType":"CoopVsAI","wins":163,"losses":0,"modifyDate":1334807231000,"aggregatedStats":{"totalChampionKills":1676,"totalMinionKills":16336,"totalTurretsKilled":227,"totalNeutralMinionsKilled":4274,"totalAssists":2312,"maxChampionsKilled":11,"averageNodeCapture":14,"averageNodeNeutralize":10,"averageTeamObjective":2,"averageTotalPlayerScore":1670,"averageCombatPlayerScore":393,"averageObjectivePlayerScore":1277,"averageNodeCaptureAssist":0,"averageNodeNeutralizeAssist":2,"maxNodeCapture":14,"maxNodeNeutralize":10,"maxTeamObjective":2,"maxTotalPlayerScore":1670,"maxCombatPlayerScore":393,"maxObjectivePlayerScore":1277,"maxNodeCaptureAssist":0,"maxNodeNeutralizeAssist":2,"totalNodeNeutralize":10,"totalNodeCapture":14,"averageChampionsKilled":11,"averageNumDeaths":2,"averageAssists":3,"maxAssists":3}},{"playerStatSummaryType":"FirstBlood2x2","wins":7,"losses":0,"modifyDate":1388439452000,"aggregatedStats":{}},{"playerStatSummaryType":"OdinUnranked","wins":3,"losses":0,"modifyDate":1388073353000,"aggregatedStats":{"totalChampionKills":49,"totalAssists":21,"maxChampionsKilled":15,"averageNodeCapture":6,"averageNodeNeutralize":4,"averageTeamObjective":1,"averageTotalPlayerScore":1206,"averageCombatPlayerScore":483,"averageObjectivePlayerScore":723,"averageNodeCaptureAssist":0,"averageNodeNeutralizeAssist":1,"maxNodeCapture":8,"maxNodeNeutralize":8,"maxTeamObjective":2,"maxTotalPlayerScore":1551,"maxCombatPlayerScore":744,"maxObjectivePlayerScore":915,"maxNodeCaptureAssist":0,"maxNodeNeutralizeAssist":1,"totalNodeNeutralize":24,"totalNodeCapture":30,"averageChampionsKilled":10,"averageNumDeaths":5,"averageAssists":4,"maxAssists":7}},{"playerStatSummaryType":"OneForAll5x5","wins":0,"losses":0,"modifyDate":1388190479000,"aggregatedStats":{}},{"playerStatSummaryType":"RankedSolo5x5","wins":87,"losses":72,"modifyDate":1388362730000,"aggregatedStats":{"totalChampionKills":581,"totalMinionKills":9847,"totalTurretsKilled":86,"totalNeutralMinionsKilled":2400,"totalAssists":1671}},{"playerStatSummaryType":"RankedTeam3x3","wins":5,"losses":5,"modifyDate":1353887009000,"aggregatedStats":{"totalChampionKills":46,"totalMinionKills":928,"totalTurretsKilled":7,"totalNeutralMinionsKilled":222,"totalAssists":58}},{"playerStatSummaryType":"RankedTeam5x5","wins":4,"losses":3,"modifyDate":1341353184000,"aggregatedStats":{"totalChampionKills":38,"totalMinionKills":851,"totalTurretsKilled":2,"totalNeutralMinionsKilled":186,"totalAssists":41}},{"playerStatSummaryType":"Unranked","wins":363,"losses":0,"modifyDate":1388275139000,"aggregatedStats":{"totalChampionKills":3231,"totalMinionKills":52510,"totalTurretsKilled":394,"totalNeutralMinionsKilled":20025,"totalAssists":6556}},{"playerStatSummaryType":"Unranked3x3","wins":6,"losses":0,"modifyDate":1373669874000,"aggregatedStats":{"totalChampionKills":40,"totalMinionKills":640,"totalTurretsKilled":5,"totalNeutralMinionsKilled":153,"totalAssists":43}}]}'
+    http_version: 
+  recorded_at: Thu, 02 Jan 2014 06:47:20 GMT
+recorded_with: VCR 2.8.0

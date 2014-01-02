@@ -4,7 +4,7 @@ class Vigor
     include Enumerable
 
     def initialize(data)
-      @champions = data['champions'].map { |champion| ChampionAggregate.new(champion) }
+      @champions = data['champions'].map { |champion| ChampionSet.new(champion) }
       @modify_date = DateTime.strptime((data['modifyDate']/1000).to_s, '%s')
     end
 
@@ -22,12 +22,12 @@ class Vigor
       if key.kind_of?(Integer)
         return @champions[key]
       else
-        return (@champions.find { |champ| champ.name.casecmp(key) == 0 }).stats
+        return @champions.find { |champ| champ.name.casecmp(key) == 0 }.stats
       end
     end
   end
 
-  class ChampionAggregate # rename this, tired atm ><
+  class ChampionSet
     attr_accessor :stats, :name, :id
 
     def initialize(data)
@@ -35,6 +35,5 @@ class Vigor
       @id = data['id']
       @name = data['name']
     end
-
   end
 end
