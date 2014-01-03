@@ -22,7 +22,8 @@ class Vigor
       if key.kind_of?(Integer)
         return @champions[key]
       else
-        return @champions.find { |champ| champ.name.casecmp(key) == 0 }.stats
+        champ = @champions.find { |champ| champ.name.casecmp(key) == 0 }
+        return champ.nil? ? {} : champ.stats
       end
     end
   end

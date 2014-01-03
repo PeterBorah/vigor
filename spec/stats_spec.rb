@@ -1,4 +1,4 @@
-describe Vigor, :vcr do
+describe Vigor::Stats, :vcr do
   before(:each) do
     Vigor.configure(ENV["API_KEY"])
   end
