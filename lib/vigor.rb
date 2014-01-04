@@ -47,7 +47,7 @@ class Vigor
       Client.get("/v1.2/summoner/#{id.to_s}/runes")["pages"].map {|page| RunePage.new(page)}
     end
 
-    def all_champions
+    def all_champions(refresh=false)
     if refresh
       @@champions = Client.get("/v1.1/champion")["champions"].map {|champ| Champion.new(champ)}
     else
