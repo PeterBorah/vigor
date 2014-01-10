@@ -43,7 +43,7 @@ class Vigor
     end
 
     def is_veteran?
-      @is_vetaran
+      @is_veteran
     end
 
     def in_series?
@@ -51,8 +51,7 @@ class Vigor
     end
 
     def to_summoner
-      return nil unless @queue_type == "RANKED_SOLO_5x5"
-      return Summoner.new({"id" => @id, "name" => @name}, :name_and_id)
+      @queue_type == "RANKED_SOLO_5x5" ? Summoner.new({"id" => @id, "name" => @name}, :name_and_id) : nil
     end
 
   end
