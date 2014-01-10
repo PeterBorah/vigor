@@ -1,9 +1,9 @@
 class Vigor
   class League
-    attr_accessor :entries, :name, :queue, :tier, :id
+    attr_accessor :members, :name, :queue, :tier, :id
 
     def initialize(data, id)
-      @entries = data['entries'].map { |entry| LeagueItem.new(entry) }
+      @members = data['entries'].map { |entry| LeagueMember.new(entry) }
       @name = data['name']
       @queue = data['queue']
       @tier = data['tier']
@@ -12,16 +12,16 @@ class Vigor
 
   end
 
-  class LeagueItem
-    attr_accessor :promo_series, :last_played, :name, :id, :rank, :tier, :wins, :queue_type
+  class LeagueMember
+    attr_accessor :series, :last_played, :name, :id, :rank, :tier, :wins, :queue_type
 
     def initialize(data)
-      @is_fresh_blood = data['isFreshBlood']
-      @is_hot_streak = data['isHotStreak']
-      @is_inactive = data['isInactive']
-      @is_veteran = data['isVeteran']
+      @fresh_blood = data['isFreshBlood']
+      @hot_streak = data['isHotStreak']
+      @inactive = data['isInactive']
+      @veteran = data['isVeteran']
       @last_played = data['lastPlayed']
-      @promo_series = PromoSeries.new(data['miniseries']) unless !data.include?('miniseries')
+      @series = Series.new(data['miniSeries']) unless !data.include?('miniSeries')
       @id = data['playerOrTeamId']
       @name = data['playerOrTeamName']
       @rank = data['rank']
@@ -30,24 +30,24 @@ class Vigor
       @queue_type = data['queueType']
     end
 
-    def is_fresh_blood?
-      @is_fresh_blood
+    def fresh_blood?
+      @fresh_blood
     end
 
-    def is_hot_streak?
-      @is_hot_streak
+    def hot_streak?
+      @hot_streak
     end
 
-    def is_inactive?
-      @is_inactive
+    def inactive?
+      @inactive
     end
 
-    def is_veteran?
-      @is_veteran
+    def veteran?
+      @veteran
     end
 
     def in_series?
-      !@promo_series.nil?
+      !@series.nil?
     end
 
     def to_summoner
@@ -56,11 +56,12 @@ class Vigor
 
   end
 
-  class PromoSeries
-    attr_accessor :losses, :progress, :target, :time_left
+  class Series
+    attr_accessor :losses, :progress, :target, :time_left, :wins
 
     def initialize(data)
       @losses = data['losses']
+      @wins = data['wins']
       @progress = data['progress']
       @target = data['target']
       @time_left = data['timeLeftToPlayMillis']
