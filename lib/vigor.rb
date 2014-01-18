@@ -13,14 +13,14 @@ require_relative 'vigor/game'
 require_relative 'vigor/team'
 require_relative 'vigor/stats'
 require_relative 'vigor/champion_stats'
+require_relative 'vigor/league'
 
 class Vigor
   class << self
-    @@regions = ['na', 'euw', 'eune', 'br', 'tr']
 
     def configure(api_key, region = "na")
       region.downcase!
-      raise Vigor::Error::InvalidRegion, "Invalid Region Configuration" unless @@regions.include?(region)
+      raise Vigor::Error::InvalidRegion, "Invalid Region Configuration" unless ['na', 'euw', 'eune', 'br', 'tr'].include?(region)
       Client.default_params :api_key => api_key
       Client.base_uri "http://prod.api.pvp.net/api/lol/#{region}"
       self
@@ -84,6 +84,10 @@ class Vigor
     # returns detailed ranked stats for each champion (combines rift and treeline stats)
     def champion_stats(id, season = nil)
       ChampionStats.new(Client.get("/v1.2/stats/by-summoner/#{id}/ranked", query: {"season" => season.to_s}))
+    end
+
+    def leagues(id)
+      Client.get("/v2.2/league/by-summoner/#{id}").map { |id, league| League.new(league, id) }
     end
   end
 end
